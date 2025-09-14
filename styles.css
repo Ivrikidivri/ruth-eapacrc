@@ -596,6 +596,17 @@ section {
   }
 }
 
+/* Submenu hidden by default on mobile */
+@media (max-width: 768px) {
+  .has-submenu .submenu {
+    display: none;
+    padding-left: 1rem;
+  }
+
+  .has-submenu.open .submenu {
+    display: block; /* expand when parent has .open */
+  }
+}
 
 
 
@@ -1059,6 +1070,7 @@ body, html {
   }
 
 }
+
 
 
 
