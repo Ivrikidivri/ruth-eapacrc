@@ -562,59 +562,55 @@ section {
   font-weight: 600;
 }
 
-/* Desktop default */
-.menu-toggle { display: none; font-size: 24px; background: none; border: none; cursor: pointer; }
-.nav-bar .main-menu { display: flex; list-style: none; gap: 1rem; align-items: center; }
-
-/* Submenus default (desktop hover) */
-.has-submenu .submenu { display: none; }
-@media (min-width: 769px) {
-  .has-submenu:hover .submenu { display: block; position: absolute; /* add styling for dropdown */ }
+/* desktop menu (default) */
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
 }
 
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-  .nav-bar { display: flex; justify-content: space-between; align-items: center; position: relative; }
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-  /* Main menu hidden on mobile until toggled */
-  .nav-bar .main-menu {
+/* mobile menu */
+@media (max-width: 768px) {
+  .main-menu {
     display: none;
     flex-direction: column;
     background: #f5f7fa;
     position: absolute;
-    top: 56px; /* adjust to header height */
+    top: 60px;
     left: 0;
     width: 100%;
-    padding: 12px 0;
-    z-index: 1000;
-  }
-  .nav-bar .main-menu.show { display: flex; }
-
-  .menu-toggle { display: block; }
-
-  /* Mobile submenu */
-  .submenu {
-    display: none;
-    flex-direction: column;
-    padding-left: 1rem;
-  }
-  .submenu.show { display: flex; }
-
-  /* arrow indicator and rotation */
-  .has-submenu > a::after {
-    content: " ▼";
-    font-size: 12px;
-    transition: transform 0.25s ease;
-    display: inline-block;
-    margin-left: 6px;
-  }
-  .has-submenu > a.active::after {
-    transform: rotate(180deg);
+    padding: 1rem;
   }
 
-  /* small link padding for touch */
-  .main-menu a { padding: 10px 16px; display: block; }
+  .main-menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
+
+
+
+
 
 
 
@@ -1080,4 +1076,5 @@ body, html {
   }
 
 }
+
 
