@@ -404,13 +404,12 @@ section {
   background: rgba(0,0,0,0.8);
 }
 
-
-/* === NAVBAR BASE === */
+/* === NAVBAR === */
 .nav-bar {
   background: linear-gradient(90deg, #e63946, #cc2a2a);
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; /* space for hamburger and logo */
+  justify-content: center; /* space for hamburger and logo */
   align-items: center;
   position: relative;
   z-index: 1500;
@@ -421,6 +420,19 @@ section {
   align-items: center;
   gap: 1rem;
 }
+
+/* Dropdown links */
+.nav-bar .dropdown-column a {
+ color: red;       /* heading text color */
+ font-weight: 700; /* optional: make it bold */
+}
+
+/* Optional: change link color on hover */
+.nav-bar .dropdown-column a:hover {
+  color: darkred;   /* slightly darker red when hovering */
+  text-decoration: underline; /* optional */
+}
+
 
 /* Main menu desktop */
 .main-menu {
@@ -973,6 +985,7 @@ body, html {
   }
 
 }
+
 
 
 
