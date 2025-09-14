@@ -534,7 +534,6 @@ section {
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.8);
 }
-
 /*NAVBAR ONLY*/
 /* Reset */
 * {
@@ -543,19 +542,19 @@ section {
   box-sizing: border-box;
 }
 
-.navbar {
+.nav-bar {
   background: #f5f7fa;
   padding: 10px 20px;
 }
 
-.navbar ul {
+.nav-bar ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.navbar ul li a {
+.nav-bar ul li a {
   text-decoration: none;
   font-size: 18px;
   color: #333;
@@ -607,6 +606,8 @@ section {
     position: relative;
   }
 }
+
+
 
 
 
@@ -1078,6 +1079,7 @@ body, html {
   }
 
 }
+
 
 
 
