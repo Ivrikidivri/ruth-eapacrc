@@ -493,7 +493,7 @@ section {
 .menu-toggle {
   display: none;         /* hidden on desktop */
   font-size: 28px;
-  background: none;
+  background: red;
   border: none;
   cursor: pointer;
   color: #fff;
@@ -1010,6 +1010,7 @@ body, html {
   }
 
 }
+
 
 
 
