@@ -505,6 +505,7 @@ section {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;      /* show hamburger on mobile */
+    font-size: 12px;
   }
 
   .main-menu {
@@ -1010,6 +1011,7 @@ body, html {
   }
 
 }
+
 
 
 
