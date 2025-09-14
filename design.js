@@ -52,43 +52,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // === Load Navbar ===
-  (() => {
-    const navbarContainer = document.getElementById("navbar");
-    if (!navbarContainer) return;
+(() => {
+  const navbarContainer = document.getElementById("navbar");
+  if (!navbarContainer) return;
 
-    fetch("navbar.html")
-      .then(res => res.text())
-      .then(data => {
-        navbarContainer.innerHTML = data;
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      navbarContainer.innerHTML = data;
 
-        const toggleBtn = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-bar ul');
-        if (toggleBtn && navMenu) {
-          toggleBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-          });
-        }
-      })
-      .catch(err => console.error("Navbar load error:", err));
-  })();
+      const toggleBtn = navbarContainer.querySelector('.menu-toggle');
+      const navMenu = navbarContainer.querySelector('.main-menu');
 
-
-  // === Load Footer ===
-  (() => {
-    const footerContainer = document.getElementById("footer");
-    if (!footerContainer) return;
-
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
-        footerContainer.innerHTML = data;
-      })
-      .catch(err => console.error("Footer load error:", err));
-  })();
+      if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
+          // Optional: update aria-expanded for accessibility
+          const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+          toggleBtn.setAttribute('aria-expanded', !expanded);
+        });
+      }
+    })
+    .catch(err => console.error("Navbar load error:", err));
+})();
 
 });
 
-
+  
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
       .forEach(el => el.classList.add('show'));
@@ -149,5 +139,6 @@ function prevImage() {
   }
 }
 }
+
 
 
