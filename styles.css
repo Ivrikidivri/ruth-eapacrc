@@ -409,7 +409,7 @@ section {
   background: linear-gradient(90deg, #e63946, #cc2a2a);
   padding: 10px 20px;
   display: flex;
-  justify-content: center; /* space for hamburger and logo */
+  justify-content: space-between; /* space between logo and hamburger */
   align-items: center;
   position: relative;
   z-index: 1500;
@@ -420,19 +420,6 @@ section {
   align-items: center;
   gap: 1rem;
 }
-
-/* Dropdown links */
-.nav-bar .dropdown-column a {
- color: red;       /* heading text color */
- font-weight: 700; /* optional: make it bold */
-}
-
-/* Optional: change link color on hover */
-.nav-bar .dropdown-column a:hover {
-  color: darkred;   /* slightly darker red when hovering */
-  text-decoration: underline; /* optional */
-}
-
 
 /* Main menu desktop */
 .main-menu {
@@ -476,11 +463,17 @@ section {
   padding: 12px 16px;
 }
 
-.dropdown-column a {
-  display: block;
-  color: red;
-  padding: 6px;
-  border-radius: 6px;
+/* Force red for dropdown headings and links */
+.nav-bar .dropdown-column h3,
+.nav-bar .dropdown-column a {
+  color: red !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-bar .dropdown-column a:hover {
+  color: darkred !important;
+  text-decoration: underline;
 }
 
 /* Hamburger button */
@@ -491,37 +484,62 @@ section {
   border: none;
   cursor: pointer;
   color: #fff;
-  position: relative;
   z-index: 2000;         /* above everything */
 }
 
 /* === MOBILE === */
 @media (max-width: 768px) {
+
+  /* Show hamburger */
   .menu-toggle {
-    display: block;      /* show hamburger on mobile */
+    display: block;
+    order: 2;          /* after logo */
+    margin-left: auto;  /* push to far right */
   }
 
+  /* Mobile menu hidden by default */
   .main-menu {
-    display: none;       /* hidden by default */
+    display: none;
     flex-direction: column;
     width: 100%;
     background: #f5f7fa;
     position: absolute;
-    top: 60px;           /* adjust based on header height */
+    top: 60px;       /* adjust if header height changes */
     left: 0;
     padding: 1rem;
     z-index: 1500;
   }
 
+  /* Show menu when toggled */
   .main-menu.show {
-    display: flex;       /* show when toggled */
+    display: flex;
   }
 
+  /* Ensure dropdown headings and links are red on mobile */
+  .main-menu .dropdown-column h3,
+  .main-menu .dropdown-column a {
+    color: red !important;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .main-menu .dropdown-column a:hover {
+    color: darkred !important;
+    text-decoration: underline;
+  }
+
+  /* Align nav items properly */
   .nav-bar {
-    justify-content: flex-start; /* left align hamburger */
+    justify-content: space-between; /* logo left, hamburger right */
+  }
+
+  .nav-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
-
 
 
 
@@ -985,6 +1003,7 @@ body, html {
   }
 
 }
+
 
 
 
