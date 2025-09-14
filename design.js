@@ -88,6 +88,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+// Submenu toggles (mobile)
+const submenuParents = document.querySelectorAll('.has-submenu > a');
+submenuParents.forEach(link => {
+  link.addEventListener('click', e => {
+    // Only run on mobile
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+
+      const submenu = link.nextElementSibling;
+      submenu.classList.toggle('show');
+      link.classList.toggle('active'); // rotate arrow
+    }
+  });
+});
+
+
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
       .forEach(el => el.classList.add('show'));
@@ -146,4 +163,5 @@ function prevImage() {
     // ✅ Already first image → close
     closeFullImg();
   }
+
 }
