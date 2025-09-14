@@ -599,6 +599,37 @@ section {
   }
 }
 
+/* Submenu (mobile default: hidden) */
+.submenu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding-left: 1rem;
+}
+
+/* Show when toggled */
+.submenu.show {
+  display: flex;
+}
+
+/* Style submenu links */
+.submenu a {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* Rotate arrow when submenu is open */
+.has-submenu > a::after {
+  content: " ▼";
+  font-size: 12px;
+  transition: transform 0.3s;
+}
+
+.has-submenu > a.active::after {
+  transform: rotate(180deg); /* flip arrow up */
+}
+
+
 
 
 
@@ -1059,4 +1090,5 @@ body, html {
     width: 14px;
     height: 14px;
   }
+
 }
