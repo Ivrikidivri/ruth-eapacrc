@@ -562,72 +562,60 @@ section {
   font-weight: 600;
 }
 
-/* Toggle button (hidden on desktop) */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Desktop default */
+.menu-toggle { display: none; font-size: 24px; background: none; border: none; cursor: pointer; }
+.nav-bar .main-menu { display: flex; list-style: none; gap: 1rem; align-items: center; }
+
+/* Submenus default (desktop hover) */
+.has-submenu .submenu { display: none; }
+@media (min-width: 769px) {
+  .has-submenu:hover .submenu { display: block; position: absolute; /* add styling for dropdown */ }
 }
 
-/* --- MOBILE STYLE --- */
+/* --- MOBILE --- */
 @media (max-width: 768px) {
-  .navbar ul {
-    display: none;              /* hide menu by default */
-    flex-direction: column;     /* vertical */
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; position: relative; }
+
+  /* Main menu hidden on mobile until toggled */
+  .nav-bar .main-menu {
+    display: none;
+    flex-direction: column;
     background: #f5f7fa;
     position: absolute;
-    top: 50px;
+    top: 56px; /* adjust to header height */
     left: 0;
     width: 100%;
-    padding: 15px 0;
+    padding: 12px 0;
+    z-index: 1000;
+  }
+  .nav-bar .main-menu.show { display: flex; }
+
+  .menu-toggle { display: block; }
+
+  /* Mobile submenu */
+  .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+  .submenu.show { display: flex; }
+
+  /* arrow indicator and rotation */
+  .has-submenu > a::after {
+    content: " ▼";
+    font-size: 12px;
+    transition: transform 0.25s ease;
+    display: inline-block;
+    margin-left: 6px;
+  }
+  .has-submenu > a.active::after {
+    transform: rotate(180deg);
   }
 
-  .navbar ul.show {
-    display: flex;              /* show menu when toggled */
-  }
-
-  .menu-toggle {
-    display: block;             /* show toggle button */
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  /* small link padding for touch */
+  .main-menu a { padding: 10px 16px; display: block; }
 }
 
-/* Submenu (mobile default: hidden) */
-.submenu {
-  display: none;
-  flex-direction: column;
-  background: #fff;
-  padding-left: 1rem;
-}
-
-/* Show when toggled */
-.submenu.show {
-  display: flex;
-}
-
-/* Style submenu links */
-.submenu a {
-  padding: 8px 15px;
-  font-size: 14px;
-}
-
-/* Rotate arrow when submenu is open */
-.has-submenu > a::after {
-  content: " ▼";
-  font-size: 12px;
-  transition: transform 0.3s;
-}
-
-.has-submenu > a.active::after {
-  transform: rotate(180deg); /* flip arrow up */
-}
 
 
 
@@ -1092,3 +1080,4 @@ body, html {
   }
 
 }
+
