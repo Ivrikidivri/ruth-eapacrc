@@ -156,6 +156,39 @@ p {
   color: lightcyan;
 }
 
+/* === Mobile responsive adjustments === */
+@media (max-width: 768px) {
+  .logo-area {
+    flex-direction: column; /* stack logo and text */
+    align-items: center;
+    text-align: center;
+  }
+
+  .divider {
+    display: none; /* hide divider on mobile */
+  }
+
+  .title-slogan h1 {
+    font-size: 20px; /* smaller title */
+  }
+
+  .title-slogan p {
+    font-size: 14px; /* smaller slogan */
+  }
+
+  .main-header {
+    justify-content: center; /* center everything */
+  }
+
+  /* Optional: adjust search box width on mobile */
+  .search-box input {
+    width: 150px;
+  }
+}
+
+
+
+
 /* Hero / Article */
 .hero-article {
   display: flex;
@@ -999,6 +1032,7 @@ body, html {
   }
 
 }
+
 
 
 
