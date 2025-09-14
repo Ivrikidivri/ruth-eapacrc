@@ -81,21 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   })();*/
 
-
-    // === Load Footer dynamically ===
-    (() => {
-      const footerContainer = document.getElementById("footer");
-      if (!footerContainer) return;
-
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => {
-        footerContainer.innerHTML = data;
-      })
-    .catch(err => console.error("Footer load error:", err));
-  })();
-
-      
       // === Mobile collapsible submenus ===
       const submenuParents = document.querySelectorAll(".has-submenu > a");
       submenuParents.forEach(link => {
@@ -118,8 +103,31 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Navbar load error:", err));
 })();
 
-  
+
+// === Load Footer dynamically ===
+  (() => {
+    const footerContainer = document.getElementById("footer");
+    if (!footerContainer) return;
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        footerContainer.innerHTML = data;
+      })
+      .catch(err => {
+        console.error("Footer load error:", err);
+        // Fallback if footer.html fails
+        footerContainer.innerHTML = `
+          <footer>
+            <p>&copy; ${new Date().getFullYear()} EAPacRC Secretariat. All rights reserved.</p>
+          </footer>
+        `;
+      });
+  })();
 });
+
+
+
 
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
@@ -180,5 +188,6 @@ function prevImage() {
     closeFullImg();
   }
 }
+
 
 
