@@ -409,7 +409,7 @@ section {
   background: linear-gradient(90deg, #e63946, #cc2a2a);
   padding: 10px 20px;
   display: flex;
-  justify-content: flex-start; /* hamburger on the left */
+  justify-content: center; /* space for hamburger and logo */
   align-items: center;
   position: relative;
   z-index: 1500;
@@ -420,6 +420,19 @@ section {
   align-items: center;
   gap: 1rem;
 }
+
+/* Dropdown links */
+.nav-bar .dropdown-column a {
+ color: red;       /* heading text color */
+ font-weight: 700; /* optional: make it bold */
+}
+
+/* Optional: change link color on hover */
+.nav-bar .dropdown-column a:hover {
+  color: darkred;   /* slightly darker red when hovering */
+  text-decoration: underline; /* optional */
+}
+
 
 /* Main menu desktop */
 .main-menu {
@@ -463,16 +476,11 @@ section {
   padding: 12px 16px;
 }
 
-/* Force red for dropdown headings and links on desktop */
 .dropdown-column a {
-  color: red !important;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.dropdown-column a:hover {
-  color: darkred !important;
-  text-decoration: underline;
+  display: block;
+  color: red;
+  padding: 6px;
+  border-radius: 6px;
 }
 
 /* Hamburger button */
@@ -483,34 +491,37 @@ section {
   border: none;
   cursor: pointer;
   color: #fff;
+  position: relative;
   z-index: 2000;         /* above everything */
 }
 
 /* === MOBILE === */
 @media (max-width: 768px) {
-
-  /* Show hamburger on left */
   .menu-toggle {
-    display: block;
+    display: block;      /* show hamburger on mobile */
   }
 
-  /* Mobile menu hidden by default */
   .main-menu {
-    display: none;
+    display: none;       /* hidden by default */
     flex-direction: column;
     width: 100%;
     background: #f5f7fa;
     position: absolute;
-    top: 60px;       /* adjust if header height changes */
+    top: 60px;           /* adjust based on header height */
     left: 0;
     padding: 1rem;
     z-index: 1500;
   }
 
-  /* Show menu when toggled */
   .main-menu.show {
-    display: flex;
+    display: flex;       /* show when toggled */
   }
+
+  .nav-bar {
+    justify-content: flex-start; /* left align hamburger */
+  }
+}
+
 
   /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
@@ -523,7 +534,7 @@ section {
     color: darkred !important;
     text-decoration: underline;
   }
-}
+
 
 
 
@@ -988,6 +999,7 @@ body, html {
   }
 
 }
+
 
 
 
