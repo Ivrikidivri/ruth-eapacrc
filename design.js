@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 
- // === Load Navbar ===
+
+  // === Load Navbar ===
 (() => {
   const navbarContainer = document.getElementById("navbar");
   if (!navbarContainer) return;
@@ -60,26 +61,29 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       navbarContainer.innerHTML = data;
 
-      const toggleBtn = navbarContainer.querySelector(".menu-toggle");
-      const navMenu = navbarContainer.querySelector(".main-menu");
-
+      const toggleBtn = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.main-menu');
       if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener("click", () => {
-          navMenu.classList.toggle("show");
-
-          // Update ARIA state
-          const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
-          toggleBtn.setAttribute("aria-expanded", !expanded);
+        toggleBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('show');
         });
       }
 
-      // === Mobile submenu toggle ===
-      const subMenus = navbarContainer.querySelectorAll(".has-submenu > a");
-      subMenus.forEach(link => {
+      // === Mobile collapsible submenus ===
+      const submenuParents = document.querySelectorAll(".has-submenu > a");
+      submenuParents.forEach(link => {
         link.addEventListener("click", e => {
-          if (window.innerWidth <= 768) { // only on mobile
-            e.preventDefault(); // prevent navigation
-            link.parentElement.classList.toggle("open");
+          if (window.innerWidth <= 768) {
+            e.preventDefault(); // stop navigation
+            const submenu = link.nextElementSibling;
+            submenu.classList.toggle("open");
+
+            // Smooth toggle
+            if (submenu.classList.contains("open")) {
+              submenu.style.display = "flex";
+            } else {
+              submenu.style.display = "none";
+            }
           }
         });
       });
@@ -87,11 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Navbar load error:", err));
 })();
 
-
-
+  
 });
 
-  
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
       .forEach(el => el.classList.add('show'));
@@ -151,7 +153,7 @@ function prevImage() {
     closeFullImg();
   }
 }
-}
+
 
 
 
