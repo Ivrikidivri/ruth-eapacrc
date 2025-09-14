@@ -112,31 +112,6 @@ p {
   transition: box-shadow 0.2s ease;
 }
 
-.search-box:focus-within {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-}
-
-.search-box input {
-  border: none;
-  padding: 10px 12px;
-  outline: none;
-  background: transparent;
-  width: 200px;
-  font-size: 14px;
-}
-
-.search-box button {
-  background: rgba(146, 27, 39, 0.95);
-  border-radius: 50px;
-}
-
-.search-box button i {
-  color: #fff;
-}
-
-.search-box button i:hover {
-  color: lightcyan;
-}
 
 /* === Mobile responsive adjustments === */
 @media (max-width: 768px) {
@@ -1014,6 +989,7 @@ body, html {
   }
 
 }
+
 
 
 
