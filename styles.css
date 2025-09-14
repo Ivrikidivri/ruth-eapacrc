@@ -409,7 +409,7 @@ section {
   background: linear-gradient(90deg, #e63946, #cc2a2a);
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between; /* space between logo and hamburger */
+  justify-content: flex-start; /* hamburger on the left */
   align-items: center;
   position: relative;
   z-index: 1500;
@@ -463,15 +463,14 @@ section {
   padding: 12px 16px;
 }
 
-/* Force red for dropdown headings and links */
-.nav-bar .dropdown-column h3,
-.nav-bar .dropdown-column a {
+/* Force red for dropdown headings and links on desktop */
+.dropdown-column a {
   color: red !important;
   font-weight: 700;
   text-decoration: none;
 }
 
-.nav-bar .dropdown-column a:hover {
+.dropdown-column a:hover {
   color: darkred !important;
   text-decoration: underline;
 }
@@ -490,11 +489,9 @@ section {
 /* === MOBILE === */
 @media (max-width: 768px) {
 
-  /* Show hamburger */
+  /* Show hamburger on left */
   .menu-toggle {
     display: block;
-    order: 2;          /* after logo */
-    margin-left: auto;  /* push to far right */
   }
 
   /* Mobile menu hidden by default */
@@ -515,8 +512,7 @@ section {
     display: flex;
   }
 
-  /* Ensure dropdown headings and links are red on mobile */
-  .main-menu .dropdown-column h3,
+  /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
     color: red !important;
     font-weight: 700;
@@ -527,19 +523,8 @@ section {
     color: darkred !important;
     text-decoration: underline;
   }
-
-  /* Align nav items properly */
-  .nav-bar {
-    justify-content: space-between; /* logo left, hamburger right */
-  }
-
-  .nav-inner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
 }
+
 
 
 
@@ -1003,6 +988,7 @@ body, html {
   }
 
 }
+
 
 
 
