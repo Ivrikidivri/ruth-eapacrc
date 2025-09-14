@@ -525,6 +525,7 @@ section {
 
   .nav-bar {
     justify-content: flex-start; /* left align hamburger */
+    background: red;
   }
 }
 
@@ -1010,6 +1011,7 @@ body, html {
   }
 
 }
+
 
 
 
