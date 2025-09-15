@@ -307,15 +307,6 @@ footer a:hover {
   }
 }
 
-section {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px;
-  opacity: 1;        /* ✅ visible by default */
-  transform: none;   /* ✅ no offset */
-  transition: all 0.8s ease;
-}
-
 .widget-wrapper {
   margin: 0;
   padding: 0;
@@ -333,12 +324,11 @@ section {
   position: relative;
   display: block;
 }
-
-/* Submenu inside the same column */
+/* Submenu hidden by default */
 .submenu {
-  display: none;           /* hidden by default */
-  margin-left: 15px;       /* indent to the right a bit */
-  background: transparent; 
+  display: none;
+  margin-left: 15px;
+  background: transparent;
   flex-direction: column;
   padding: 0;
 }
@@ -348,7 +338,7 @@ section {
   display: block;
   padding: 8px 12px;
   color: red;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .submenu a:hover {
@@ -356,12 +346,7 @@ section {
   text-decoration: underline;
 }
 
-/* Show submenu on hover (desktop) */
-.has-submenu:hover .submenu {
-  display: flex;
-}
-
-/* Show submenu when active (mobile) */
+/* Show submenu only when active (desktop & mobile) */
 .has-submenu.active .submenu {
   display: flex;
 }
@@ -1015,6 +1000,7 @@ body, html {
   }
 
 }
+
 
 
 
