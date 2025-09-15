@@ -100,6 +100,67 @@ p {
   margin: 0;
 }
 
+/* === Header Responsive === */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  padding: 20px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-slogan h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-slogan p {
+  font-size: 16px;
+  color: #444;
+  margin: 0;
+}
+
+
+
+/* === Mobile responsive adjustments === */
+@media (max-width: 768px) {
+  .logo-area {
+    flex-direction: column; /* stack logo and text */
+    align-items: center;
+    text-align: center;
+  }
+
+  .divider {
+    display: none; /* hide divider on mobile */
+  }
+
+  .title-slogan h1 {
+    font-size: 20px; /* smaller title */
+  }
+
+  .title-slogan p {
+    font-size: 14px; /* smaller slogan */
+  }
+
+  .main-header {
+    justify-content: center; /* center everything */
+  }
+
+  /* Optional: adjust search box width on mobile */
+  .search-box input {
+    width: 150px;
+  }
+}
+
+
+
 
 /* Hero / Article */
 .hero-article {
@@ -189,7 +250,7 @@ button:hover {
 }
 
 /* Sections animation */
-/*section {
+section {
   max-width: 800px;
   margin: 60px auto;
   padding: 20px;
@@ -201,7 +262,7 @@ button:hover {
 section.show {
   opacity: 1;
   transform: translateY(0);
-}*/
+}
 
 /* Footer */
 footer {
@@ -263,12 +324,11 @@ footer a:hover {
   position: relative;
   display: block;
 }
-
-/* Submenu inside the same column */
+/* Submenu hidden by default */
 .submenu {
-  display: none;           /* hidden by default */
-  margin-left: 15px;       /* indent to the right a bit */
-  background: transparent; /* no extra background, blends with column */
+  display: none;
+  margin-left: 15px;
+  background: transparent;
   flex-direction: column;
   padding: 0;
 }
@@ -278,7 +338,7 @@ footer a:hover {
   display: block;
   padding: 8px 12px;
   color: red;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .submenu a:hover {
@@ -286,8 +346,8 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Show submenu on hover */
-.has-submenu:hover .submenu {
+/* Show submenu only when active (desktop & mobile) */
+.has-submenu.active .submenu {
   display: flex;
 }
 
@@ -339,7 +399,6 @@ footer a:hover {
 .prev:hover, .next:hover {
   background: rgba(0,0,0,0.8);
 }
-
 
 /* === NAVBAR === */
 .nav-bar {
@@ -424,7 +483,7 @@ footer a:hover {
 .menu-toggle {
   display: none;         /* hidden on desktop */
   font-size: 28px;
-  background: none;
+  background: red;
   border: none;
   cursor: pointer;
   color: #fff;
@@ -442,7 +501,7 @@ footer a:hover {
     display: none;       /* hidden by default */
     flex-direction: column;
     width: 100%;
-    background: #f5f7fa;
+    background: red;
     position: absolute;
     top: 60px;           /* adjust based on header height */
     left: 0;
@@ -455,13 +514,61 @@ footer a:hover {
   }
 
   .nav-bar {
-    background: red;
     justify-content: flex-start; /* left align hamburger */
   }
+
+/* Dropdown hidden by default */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  flex-direction: column;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  padding: 0;
 }
 
+/* Dropdown links */
+.dropdown-column a {
+  display: block;
+  padding: 10px 14px;
+  color: red;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
 
-  /* Force red for dropdown headings and links on mobile */
+.dropdown-column a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-column a:hover {
+  background: #f9f9f9;
+  text-decoration: underline;
+}
+
+/* Show dropdown when active */
+.menu-item.active .dropdown {
+  display: flex;
+}
+
+/* Highlight parent when active */
+.menu-item > a {
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 4px;
+}
+
+.menu-item.active > a {
+  background: darkred;
+}
+
+/* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
     color: red !important;
     font-weight: 700;
@@ -472,6 +579,7 @@ footer a:hover {
     color: darkred !important;
     text-decoration: underline;
   }
+}
 
 
 
@@ -480,8 +588,8 @@ footer a:hover {
     padding: 20px 10px;
     font-size: 1rem;
   }
-}
 
+  
 
 
 
@@ -948,6 +1056,7 @@ body, html {
   }
 
 }
+
 
 
 
