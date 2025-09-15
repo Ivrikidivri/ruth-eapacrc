@@ -507,6 +507,16 @@ footer a:hover {
   }
 }
 
+/* Active menu item */
+.main-menu li a.active {
+  background: #fff;       /* white background */
+  color: #e63946;         /* your red */
+  font-weight: 900;       /* bolder text */
+  border-radius: 6px;
+  text-shadow: none;      /* cleaner look */
+}
+
+
 
 
 
@@ -972,6 +982,7 @@ body, html {
   }
 
 }
+
 
 
 
