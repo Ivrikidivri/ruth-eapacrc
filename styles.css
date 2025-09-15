@@ -338,7 +338,7 @@ section {
 .submenu {
   display: none;           /* hidden by default */
   margin-left: 15px;       /* indent to the right a bit */
-  background: transparent; /* no extra background, blends with column */
+  background: transparent; 
   flex-direction: column;
   padding: 0;
 }
@@ -356,8 +356,13 @@ section {
   text-decoration: underline;
 }
 
-/* Show submenu on hover */
+/* Show submenu on hover (desktop) */
 .has-submenu:hover .submenu {
+  display: flex;
+}
+
+/* Show submenu when active (mobile) */
+.has-submenu.active .submenu {
   display: flex;
 }
 
@@ -1010,6 +1015,7 @@ body, html {
   }
 
 }
+
 
 
 
