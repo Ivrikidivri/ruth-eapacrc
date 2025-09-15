@@ -1,23 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /*// === Intersection Observer for animations ===
-  (() => {
-    const sections = document.querySelectorAll('section');
-    if (!sections.length) return;
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => observer.observe(section));
-  })();*/
-
-
-  // === Index Slider ===
+// === Index Slider ===
   (() => {
     const slides = document.querySelector('.slides');
     const prevBtn = document.querySelector('.prev');
@@ -51,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
 
-  // === Load Navbar ===
+
+
+// === Load Navbar ===
 (() => {
   const navbarContainer = document.getElementById("navbar");
   if (!navbarContainer) return;
@@ -119,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
   
-});
 
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
@@ -196,6 +178,4 @@ document.querySelectorAll(".has-submenu > a").forEach(link => {
     parent.classList.toggle("active");
   });
 });
-
-
 
