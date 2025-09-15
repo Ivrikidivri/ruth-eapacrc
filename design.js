@@ -181,19 +181,23 @@ function prevImage() {
   }
 }
 
-// Toggle submenu on click
-document.querySelectorAll(".has-submenu > a").forEach(link => {
+// Toggle for dropdowns & submenus
+document.querySelectorAll(".menu-item > a, .has-submenu > a").forEach(link => {
   link.addEventListener("click", e => {
-    e.preventDefault(); // stop link navigation
     const parent = link.parentElement;
 
-    // Close other open submenus (optional accordion effect)
-    document.querySelectorAll(".has-submenu").forEach(item => {
-      if (item !== parent) item.classList.remove("active");
-    });
+    // If it has dropdown or submenu, prevent navigation
+    if (parent.querySelector(".dropdown, .submenu")) {
+      e.preventDefault();
 
-    // Toggle current submenu
-    parent.classList.toggle("active");
+      // Close others (accordion effect)
+      document.querySelectorAll(".menu-item, .has-submenu").forEach(item => {
+        if (item !== parent) item.classList.remove("active");
+      });
+
+      // Toggle current
+      parent.classList.toggle("active");
+    }
   });
 });
 
