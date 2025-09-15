@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Intersection Observer for animations ===
+  /*// === Intersection Observer for animations ===
   (() => {
     const sections = document.querySelectorAll('section');
     if (!sections.length) return;
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.2 });
 
     sections.forEach(section => observer.observe(section));
-  })();
+  })();*/
 
 
   // === Index Slider ===
@@ -200,6 +200,7 @@ document.querySelectorAll(".menu-item > a, .has-submenu > a").forEach(link => {
     }
   });
 });
+
 
 
 
