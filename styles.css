@@ -466,54 +466,27 @@ footer a:hover {
     display: block;      /* show hamburger on mobile */
   }
 
-  /* Only apply on screens smaller than 768px */
-@media (max-width: 768px) {
-  .submenu {
-    display: none;
+  .main-menu {
+    display: none;       /* hidden by default */
     flex-direction: column;
-    background: #fff;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    background: red;
+    position: absolute;
+    top: 60px;           /* adjust based on header height */
+    left: 0;
+    padding: 1rem;
+    z-index: 1500;
   }
 
- .has-submenu.active > .submenu {
-    display: flex;
+  .main-menu.show {
+    display: flex;       /* show when toggled */
   }
 
-  .submenu a {
-    padding: 10px 14px;
-    color: red;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid #eee;
-  }
-
-  .submenu a:last-child {
-    border-bottom: none;
-  }
-
-  .submenu a:hover {
-    background: #f9f9f9;
-    text-decoration: underline;
-  }
-
-  .has-submenu > a {
-    display: block;
-    padding: 12px;
-    color: white;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .has-submenu.active > a {
-    background: darkred;
-    color: #fff;
+  .nav-bar {
+    justify-content: flex-start; /* left align hamburger */
   }
 }
-}
+
 
   /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
@@ -998,6 +971,7 @@ body, html {
   }
 
 }
+
 
 
 
