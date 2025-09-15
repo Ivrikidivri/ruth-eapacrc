@@ -1,104 +1,131 @@
-<!-- navbar.html -->
-<div class="nav-container">
-  <nav class="nav-bar">
-    <div class="nav-inner">
-      
-      <!-- mobile toggle -->
-      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="main-menu">☰ Menu</button>
-
-      <!-- main menu -->
-      <ul id="main-menu" class="main-menu">
-        <li class="menu-item has-submenu">
-          <a href="#">About Us ▼</a>
-          <div class="dropdown">
-            <div class="dropdown-column">
-              <h3>Who We Are</h3>
-              <a href="History.html">Our History</a>
-              <a href="Team.html">Team</a>
-              <a href="Contact.html">Contact</a>
-              <a href="Gallery.html">Gallery</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item has-submenu">
-          <a href="#">Our Work ▼</a>
-          <div class="dropdown">
-            <div class="dropdown-column">
-              <h3>What We Do</h3>
-              <a href="/Programs/index.html">Programs</a>
-              <a href="/Partners/index.html">Partners</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item has-submenu">
-          <a href="#">Regional Homes ▼</a>
-          <div class="dropdown">
-            <div class="dropdown-column">
-              <h3>Nations</h3>
-              <a href="/Nations%20(China)/index.html">China</a>
-
-              <div class="has-submenu">
-                <a href="#">Hong Kong ▼</a>
-                <div class="submenu">
-                  <a href="/Nations%20(Hong%20Kong%20-%20%20Chung%20Hom%20Kok)/index.html?lang=en">Chung Hom Kok</a>
-                  <a href="/Nations%20(Hong%20Kong%20-%20%20Shatin)/index.html?lang=en">Shatin</a>
-                </div>
-              </div>
-
-              <a href="/Nations%20(Indonesia)/index.html">Indonesia</a>
-
-              <div class="has-submenu">
-                <a href="#">Japan ▼</a>
-                <div class="submenu">
-                  <a href="/Nations%20(Japan%20-%20Hanshin)/index.html">Hanshin</a>
-                  <a href="/Nations%20(Japan%20-%20Harima)/index.html">Harima</a>
-                  <a href="/Nations%20(Japan%20-%20Shiso)/index.html">Shisho</a>
-                </div>
-              </div>
-
-              <div class="has-submenu">
-                <a href="#">Malaysia ▼</a>
-                <div class="submenu">
-                  <a href="/Nations%20(Malaysia%20-%20Johor)/index.html?lang=en">Johor</a>
-                  <a href="/Nations%20(Malaysia%20-%20Penang)/index.html?lang=en">Penang</a>
-                  <a href="/Nations%20(Malaysia%20-%20Sabah)/index.html?lang=en">Sabah</a>
-                  <a href="/Nations%20(Malaysia%20-%20Selangor)/index.html?lang=en">Selangor</a>
-                </div>
-              </div>
-
-              <a href="/Nations%20(Singapore)/index.html">Singapore</a>
-              <a href="/Nations%20(Thailand)/index.html">Thailand</a>
-              <a href="/Nations%20(Philippines)/index.html">The Philippines</a>
-              <a href="/Nations%20(PNG)/index.html">Papua New Guinea</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item has-submenu">
-          <a href="#">Events & News ▼</a>
-          <div class="dropdown">
-            <div class="dropdown-column">
-              <h3>Latest Events</h3>
-              <a href="/Event%20and%20News/index.html">17th Biennial General Meeting</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="menu-item has-submenu">
-          <a href="#">Get Involved ▼</a>
-          <div class="dropdown">
-            <div class="dropdown-column">
-              <h3>Work With Us</h3>
-              <a href="/Get%20Involved/index.html">Partnership</a>
-              <a href="/Donate/index.html">Donate Now</a>
-            </div>
-          </div>
-        </li>
-      </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EAPacRC Secretariat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top utility bar -->
+  <div class="utility-bar">
+    <div class="utility-left">
+      <button onclick="location.href='index.html'">
+        Welcome to EAPacRC Secretariat
+      </button>
     </div>
-  </nav>
-</div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo-area">
+      <img src="Assets/EAPACRC OF CHESHIRE HOMES (1).jpg" alt="EAPacRC of Cheshire Homes" onclick="location.href='index.html'">
+      <div class="divider"></div>
+      <div class="title-slogan">
+        <h1>East Asia & Pacific Regional Council Secretariat</h1>
+        <p>Empowering People With Disabilities</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Search" aria-label="Search">
+        <button type="submit" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🔹 Navbar loads dynamically -->
+  <div id="navbar"></div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <section class="hero-article">
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="Assets/Screenshot 2025-09-11 150855.jpg" alt="Image 1" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="Assets/Scan 04 Sept 25 16·12·08_2.jpg" alt="Image 2" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="Assets/Scan 04 Sept 25 16·12·08_3.jpg" alt="Image 3" loading="lazy">
+          </div>
+          <div class="slide">
+            <img src="Assets/Scan 04 Sept 25 16·13·59.jpg" alt="Image 4" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <button class="prev" aria-label="Previous Slide">&#10094;</button>
+        <button class="next" aria-label="Next Slide">&#10095;</button>
+      </div>
+
+      <div class="article-text-1">
+        <h2>The EAPacRC Secretariat</h2>
+        <p>The East Asia & Pacific Regional Council (EAPacRC) of Cheshire Homes is a collaborative body of member organizations working together across our region.</p>
+        <p>We are driven by a shared vision:   
+          <span class="quote">
+            "A world where every person with a disability lives with dignity, inclusion, and independence".
+          </span>
+        </p>
+        <p>EAPacRC exists to connect people and organizations, to learn from one another, and to act together.</p>
+        <p>Through collaboration, we share experiences, address challenges, and create solutions that open doors to equal opportunities and meaningful participation for every PwD.</p>
+      </div>
+    </section>
+
+    <section class="hero-article">
+      <div class="article-text-2">
+        <p>
+          <span class="quote-2">"The true measure of a society is how it embraces its most vulnerable members." - Mahatma Gandhi</span>
+        </p>
+      </div>
+    </section>
+
+    <!--<div class="widget-wrapper">
+      <div class="elfsight-app-ff2ffcfb-2b3d-47e4-aebb-2be7e6d719ad" data-elfsight-app-lazy></div>
+    </div>-->
+  </main>
+
+<!-- Google Translate Dropdown -->
+<div id="google_translate_element"></div>
+
+
+
+  <!-- JS -->
+  <script src="design.js"></script>
+  <!--<script src="https://static.elfsight.com/platform/platform.js" async></script>-->
+
+  <!-- 🔹 Footer loads dynamically -->
+  <div id="footer"></div>
+
+
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en', // default language of your site
+        includedLanguages: 'zh-CN,,ja,id,ms,th', // add more if needed
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+</script>
+
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit&hl=en"></script>
+</script>
+
+
+</body>
+</html>
 
 
