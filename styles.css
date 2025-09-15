@@ -307,6 +307,15 @@ footer a:hover {
   }
 }
 
+section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  opacity: 1;        /* ✅ visible by default */
+  transform: none;   /* ✅ no offset */
+  transition: all 0.8s ease;
+}
+
 .widget-wrapper {
   margin: 0;
   padding: 0;
@@ -324,11 +333,12 @@ footer a:hover {
   position: relative;
   display: block;
 }
-/* Submenu hidden by default */
+
+/* Submenu inside the same column */
 .submenu {
-  display: none;
-  margin-left: 15px;
-  background: transparent;
+  display: none;           /* hidden by default */
+  margin-left: 15px;       /* indent to the right a bit */
+  background: transparent; /* no extra background, blends with column */
   flex-direction: column;
   padding: 0;
 }
@@ -338,7 +348,7 @@ footer a:hover {
   display: block;
   padding: 8px 12px;
   color: red;
-  text-decoration: none;
+  text-decoration:none;
 }
 
 .submenu a:hover {
@@ -346,8 +356,8 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Show submenu only when active (desktop & mobile) */
-.has-submenu.active .submenu {
+/* Show submenu on hover */
+.has-submenu:hover .submenu {
   display: flex;
 }
 
@@ -516,59 +526,10 @@ footer a:hover {
   .nav-bar {
     justify-content: flex-start; /* left align hamburger */
   }
-
-/* Dropdown hidden by default */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 200px;
-  background: #fff;
-  flex-direction: column;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  z-index: 999;
-  padding: 0;
 }
 
-/* Dropdown links */
-.dropdown-column a {
-  display: block;
-  padding: 10px 14px;
-  color: red;
-  font-weight: 600;
-  border-bottom: 1px solid #eee;
-}
 
-.dropdown-column a:last-child {
-  border-bottom: none;
-}
-
-.dropdown-column a:hover {
-  background: #f9f9f9;
-  text-decoration: underline;
-}
-
-/* Show dropdown when active */
-.menu-item.active .dropdown {
-  display: flex;
-}
-
-/* Highlight parent when active */
-.menu-item > a {
-  color: white;
-  font-weight: bold;
-  padding: 10px 15px;
-  display: block;
-  border-radius: 4px;
-}
-
-.menu-item.active > a {
-  background: darkred;
-}
-
-/* Force red for dropdown headings and links on mobile */
+  /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
     color: red !important;
     font-weight: 700;
@@ -579,17 +540,16 @@ footer a:hover {
     color: darkred !important;
     text-decoration: underline;
   }
-}
-
-
 
 @media (max-width: 768px) {
   footer {
     padding: 20px 10px;
     font-size: 1rem;
   }
+}
 
-  
+
+
 
 
 
@@ -1052,6 +1012,7 @@ body, html {
   }
 
 }
+
 
 
 
