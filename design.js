@@ -181,6 +181,15 @@ function prevImage() {
   }
 }
 
+document.querySelectorAll(".has-submenu > a").forEach(link => {
+  link.addEventListener("click", e => {
+    if (window.innerWidth <= 768) { // only on mobile
+      e.preventDefault();
+      link.parentElement.classList.toggle("active");
+    }
+  });
+
+
 
 
 
