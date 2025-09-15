@@ -181,14 +181,21 @@ function prevImage() {
   }
 }
 
+// Toggle submenu on click
 document.querySelectorAll(".has-submenu > a").forEach(link => {
   link.addEventListener("click", e => {
-    if (window.innerWidth <= 768) { // only on mobile
-      e.preventDefault();
-      link.parentElement.classList.toggle("active");
-    }
-  });
+    e.preventDefault(); // stop link navigation
+    const parent = link.parentElement;
 
+    // Close other open submenus (optional accordion effect)
+    document.querySelectorAll(".has-submenu").forEach(item => {
+      if (item !== parent) item.classList.remove("active");
+    });
+
+    // Toggle current submenu
+    parent.classList.toggle("active");
+  });
+});
 
 
 
