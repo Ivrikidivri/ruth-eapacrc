@@ -7,11 +7,13 @@
   padding: 0;
 }
 
+
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
+  
 }
 
 body {
@@ -460,33 +462,64 @@ footer a:hover {
   z-index: 2000;         /* above everything */
 }
 
-/* === MOBILE === */
+/* === MOBILE ACCORDION === */
 @media (max-width: 768px) {
+  /* Hamburger toggle */
   .menu-toggle {
-    display: block;      /* show hamburger on mobile */
+    display: block;
+    margin: 0 auto;       /* center the button */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
+  /* Main menu container */
   .main-menu {
-    display: none;       /* hidden by default */
+    display: none;        /* hidden by default */
     flex-direction: column;
-    width: 100%;
-    background: red;
-    position: absolute;
-    top: 60px;           /* adjust based on header height */
-    left: 0;
-    padding: 1rem;
-    z-index: 1500;
+    width: 100%;          /* full width of nav */
+    background: #f44336;  /* example color */
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
   }
 
+  /* Show main menu */
   .main-menu.show {
-    display: flex;       /* show when toggled */
+    display: flex;
   }
 
-  .nav-bar {
-    justify-content: flex-start; /* left align hamburger */
+  /* Top-level menu items */
+  .menu-item > a {
+    display: block;
+    padding: 0.5rem 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Dropdown inside main menu (accordion) */
+  .menu-item > .dropdown {
+    display: none;          /* hidden by default */
+    flex-direction: column;
+    padding-left: 1rem;     /* indent for dropdown */
+  }
+
+  .menu-item.active > .dropdown {
+    display: flex;          /* show dropdown when parent active */
+  }
+
+  /* Submenus inside dropdowns */
+  .has-submenu > .submenu {
+    display: none;          /* hidden by default */
+    flex-direction: column;
+    padding-left: 1rem;     /* further indent */
+  }
+
+  .has-submenu.active .submenu {
+    display: flex;          /* show submenu when parent active */
   }
 }
-
 
   /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
@@ -1008,6 +1041,7 @@ body {
   float: left;
   margin: 10px;
 }*/
+
 
 
 
