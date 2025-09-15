@@ -162,3 +162,37 @@ function prevImage() {
     closeFullImg();
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Toggle main menu
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainMenu = document.querySelector("#main-menu");
+
+  menuToggle.addEventListener("click", () => {
+    mainMenu.classList.toggle("show");
+  });
+
+  // Toggle top-level dropdowns (About Us, Our Work, etc.)
+  document.querySelectorAll(".menu-item > a").forEach(link => {
+    const parent = link.parentElement;
+    const dropdown = parent.querySelector(".dropdown");
+
+    if (dropdown) {
+      link.addEventListener("click", e => {
+        e.preventDefault();               // prevent link navigation
+        parent.classList.toggle("active"); // toggle dropdown
+      });
+    }
+  });
+
+  // Toggle nested submenus (inside dropdown)
+  document.querySelectorAll(".has-submenu > a").forEach(link => {
+    const parent = link.parentElement;
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      parent.classList.toggle("active"); // toggle submenu
+    });
+  });
+});
+
+
