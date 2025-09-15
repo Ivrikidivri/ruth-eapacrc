@@ -516,6 +516,26 @@ footer a:hover {
 }
 
 
+  /* Force red for dropdown headings and links on mobile */
+  .main-menu .dropdown-column a {
+    color: red !important;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .main-menu .dropdown-column a:hover {
+    color: darkred !important;
+    text-decoration: underline;
+  }
+
+@media (max-width: 768px) {
+  footer {
+    padding: 20px 10px;
+    font-size: 1rem;
+  }
+}
+
+
 
 
 
@@ -979,6 +999,7 @@ body, html {
   }
 
 }
+
 
 
 
