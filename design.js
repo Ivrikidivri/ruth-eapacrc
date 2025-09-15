@@ -34,74 +34,53 @@
 
 
 
-// === Load Navbar ===
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
+
+  // === Load Navbar dynamically ===
   const navbarContainer = document.getElementById("navbar");
-  if (!navbarContainer) return;
-
-  fetch("navbar.html")
-    .then(res => res.text())
-    .then(data => {
-      navbarContainer.innerHTML = data;
-
-      const toggleBtn = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.main-menu');
-      if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', () => {
-          navMenu.classList.toggle('show');
-        });
-      }
-
-      /*// === Load Footer dynamically ===
-      (() => {
-      const footerContainer = document.getElementById("footer");
-      if (!footerContainer) return;
-
-    footerContainer.innerHTML = `
-    <footer>
-      <p>&copy; ${new Date().getFullYear()} EAPacRC Secretariat. All rights reserved.</p>
-    </footer>
-  `;
-  })();*/
-
-
-    // === Load Footer dynamically ===
-    (() => {
-      const footerContainer = document.getElementById("footer");
-      if (!footerContainer) return;
-
-    fetch("footer.html")
+  if (navbarContainer) {
+    fetch("navbar.html")
       .then(res => res.text())
       .then(data => {
-        footerContainer.innerHTML = data;
-      })
-    .catch(err => console.error("Footer load error:", err));
-  })();
+        navbarContainer.innerHTML = data;
 
-      
-      // === Mobile collapsible submenus ===
-      const submenuParents = document.querySelectorAll(".has-submenu > a");
-      submenuParents.forEach(link => {
-        link.addEventListener("click", e => {
-          if (window.innerWidth <= 768) {
-            e.preventDefault(); // stop navigation
-            const submenu = link.nextElementSibling;
-            submenu.classList.toggle("open");
+        // Hamburger toggle
+        const toggleBtn = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.main-menu');
+        if (toggleBtn && navMenu) {
+          toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+          });
+        }
 
-            // Smooth toggle
-            if (submenu.classList.contains("open")) {
-              submenu.style.display = "flex";
-            } else {
-              submenu.style.display = "none";
+        // Mobile accordion submenus
+        const submenuParents = document.querySelectorAll(".has-submenu > a");
+        submenuParents.forEach(link => {
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              link.parentElement.classList.toggle("active");
             }
-          }
+          });
         });
-      });
-    })
-    .catch(err => console.error("Navbar load error:", err));
-})();
 
-  
+      })
+      .catch(err => console.error("Navbar load error:", err));
+  }
+
+  // === Google Translate z-index fix after async load ===
+  function moveGoogleTranslate() {
+    const widget = document.getElementById('google_translate_element');
+    if (widget) {
+      widget.style.top = '10px';
+      widget.style.right = '10px';
+      widget.style.zIndex = '100';
+    }
+  }
+
+  // Slight delay to ensure widget loaded
+  window.addEventListener('load', () => setTimeout(moveGoogleTranslate, 500));
+});
 
 // === Gallery Slider ===
   document.querySelectorAll('.gallery-title, .img-gallery')
@@ -123,6 +102,7 @@
       let currentIndex = 0;
       const images = [];
       const thumbnails = document.querySelectorAll('.img-gallery img');
+
 
       thumbnails.forEach((img, index) => {
       images.push(img.src);
@@ -190,5 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
