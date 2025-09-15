@@ -162,32 +162,3 @@ function prevImage() {
     closeFullImg();
   }
 }
-
-function setupMobileAccordion() {
-  if (window.innerWidth <= 768) { // Only on mobile
-    document.querySelectorAll('.has-submenu > a').forEach(parentLink => {
-      parentLink.addEventListener('click', e => {
-        e.preventDefault();
-
-        const parent = parentLink.parentElement;
-
-        // Close other submenus
-        document.querySelectorAll('.has-submenu').forEach(item => {
-          if (item !== parent) item.classList.remove('active');
-        });
-
-        // Toggle current submenu
-        parent.classList.toggle('active');
-      });
-    });
-  }
-}
-
-// Run on load
-setupMobileAccordion();
-
-// Re-run on window resize (optional)
-window.addEventListener('resize', () => {
-  document.querySelectorAll('.has-submenu').forEach(item => item.classList.remove('active'));
-  setupMobileAccordion();
-});
