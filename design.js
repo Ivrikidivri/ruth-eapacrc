@@ -181,27 +181,21 @@ function prevImage() {
   }
 }
 
-// Toggle for dropdowns & submenus
-document.querySelectorAll(".menu-item > a, .has-submenu > a").forEach(link => {
+// Accordion dropdown for About Us, Our Work, Regional Homes, Events & News
+document.querySelectorAll(".has-submenu > a").forEach(link => {
   link.addEventListener("click", e => {
+    e.preventDefault();
     const parent = link.parentElement;
 
-    // If it has dropdown or submenu, prevent navigation
-    if (parent.querySelector(".dropdown, .submenu")) {
-      e.preventDefault();
+    // Close all others
+    document.querySelectorAll(".has-submenu").forEach(item => {
+      if (item !== parent) item.classList.remove("active");
+    });
 
-      // Close others (accordion effect)
-      document.querySelectorAll(".menu-item, .has-submenu").forEach(item => {
-        if (item !== parent) item.classList.remove("active");
-      });
-
-      // Toggle current
-      parent.classList.toggle("active");
-    }
+    // Toggle current
+    parent.classList.toggle("active");
   });
 });
-
-
 
 
 
