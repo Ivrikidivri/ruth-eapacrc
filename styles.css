@@ -462,13 +462,13 @@ footer a:hover {
   z-index: 2000;         /* above everything */
 }
 
-/* === MOBILE NAVBAR === */
+/* === MOBILE NAVBAR ACCORDION === */
 @media (max-width: 768px) {
 
   /* Hamburger toggle */
   .menu-toggle {
     display: block;
-    margin: 0 auto;          /* center hamburger */
+    margin: 0 auto;  
     font-size: 24px;
     background: none;
     border: none;
@@ -477,15 +477,14 @@ footer a:hover {
 
   /* Main menu container */
   .main-menu {
-    display: none;            /* hidden by default */
+    display: none;  
     flex-direction: column;
-    width: 100%;              /* full width of nav column */
-    background: #f44336;      /* adjust color */
+    width: 100%;
+    background: #f44336;
     padding: 0.5rem 1rem;
     box-sizing: border-box;
   }
 
-  /* Show main menu when toggled */
   .main-menu.show {
     display: flex;
   }
@@ -499,53 +498,51 @@ footer a:hover {
     cursor: pointer;
   }
 
-  /* Dropdown inside menu column */
+  /* Make dropdown flow inside menu column */
   .menu-item > .dropdown {
-    display: none;           /* hidden by default */
-    position: relative;      /* keep inside column flow */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-left: 1rem;      /* indent dropdown */
-    box-sizing: border-box;
+    display: none;
     flex-direction: column;
-    background: #f44336;     /* same as main menu or adjust */
+    padding-left: 0.5rem; /* optional indent */
+    width: 100%;          /* fill parent width */
+    box-sizing: border-box;
   }
 
-  /* Show dropdown when parent is active */
   .menu-item.active > .dropdown {
     display: flex;
   }
 
-  /* Submenus inside dropdown */
+  /* Flatten dropdown-column */
+  .dropdown-column {
+    display: flex;
+    flex-direction: column;
+    padding: 0;       /* remove spacing that pushes it out */
+    margin: 0;
+  }
+
+  .dropdown-column h3 {
+    margin: 0.5rem 0;
+    color: white;
+  }
+
+  /* Nested submenus inside dropdown */
   .has-submenu .submenu {
     display: none;
     flex-direction: column;
-    padding-left: 1rem;      /* indent nested submenu */
+    padding-left: 1rem;  
   }
 
   .has-submenu.active .submenu {
     display: flex;
   }
 
-  /* Optional: style links in dropdown */
+  /* Links inside dropdown/submenu */
   .dropdown a, .submenu a {
     padding: 0.25rem 0;
     color: white;
     text-decoration: none;
   }
-
-  /* Optional: hover effect (mobile) */
-  .menu-item > a:hover, .dropdown a:hover, .submenu a:hover {
-    text-decoration: underline;
-  }
-
-  /* Ensure dropdown columns stack vertically */
-  .dropdown-column {
-    display: flex;
-    flex-direction: column;
-  }
 }
+
 
   /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
@@ -1067,6 +1064,7 @@ body {
   float: left;
   margin: 10px;
 }*/
+
 
 
 
