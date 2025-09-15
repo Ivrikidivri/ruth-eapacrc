@@ -100,8 +100,6 @@ p {
   margin: 0;
 }
 
-
-
 /* === Mobile responsive adjustments === */
 @media (max-width: 768px) {
   .logo-area {
@@ -131,9 +129,6 @@ p {
     width: 150px;
   }
 }
-
-
-
 
 /* Hero / Article */
 .hero-article {
@@ -223,7 +218,7 @@ button:hover {
 }
 
 /* Sections animation */
-section {
+/*section {
   max-width: 800px;
   margin: 60px auto;
   padding: 20px;
@@ -235,7 +230,7 @@ section {
 section.show {
   opacity: 1;
   transform: translateY(0);
-}
+}*/
 
 /* Footer */
 footer {
@@ -278,15 +273,6 @@ footer a:hover {
   .article-text {
     max-width: 100%;
   }
-}
-
-section {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 20px;
-  opacity: 1;        /* ✅ visible by default */
-  transform: none;   /* ✅ no offset */
-  transition: all 0.8s ease;
 }
 
 .widget-wrapper {
@@ -520,6 +506,7 @@ section {
     font-size: 1rem;
   }
 }
+
 
 
 
@@ -985,6 +972,7 @@ body, html {
   }
 
 }
+
 
 
 
