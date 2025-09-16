@@ -53,16 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Footer load error:", err));
   }
 
-  // === Google Translate z-index fix ===
-  function moveGoogleTranslate() {
-    const widget = document.getElementById('google_translate_element');
-    if (widget) {
-      widget.style.top = '10px';
-      widget.style.right = '10px';
-      widget.style.zIndex = '100';
-    }
-  }
-  window.addEventListener('load', () => setTimeout(moveGoogleTranslate, 500));
+
+});
+
 
   // === Index Slider ===
   const slides = document.querySelector('.slides');
@@ -115,31 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else closeFullImg();
   }
 
-}); // Hamburger toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainMenu = document.querySelector('.main-menu');
-
-  menuToggle.addEventListener('click', () => {
-    mainMenu.classList.toggle('show');
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', !expanded);
-  });
-
-  // Mobile submenu toggle
-  document.querySelectorAll('.has-submenu > a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parent = link.parentElement;
-        parent.classList.toggle('active');
-      }
-    });
-  });
-
-function toggleMenu() {
-  const menu = document.getElementById('main-menu');
-  menu.classList.toggle('open');
-}
 
 
 
