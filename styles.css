@@ -568,69 +568,97 @@ footer a:hover {
 
 /* === MOBILE NAVBAR REWORK (UN.org style) === */
 @media (max-width: 768px) {
+@media (max-width: 768px) {
 
-  /* Main menu as full-width vertical panel */
-  .main-menu {
-    display: none;
-    flex-direction: column;
+  /* Navbar stays fixed top */
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
     background: linear-gradient(90deg, #e63946, #cc2a2a);
-    padding: 0.5rem 1rem;
+  }
+
+  /* Hamburger button */
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  /* Full-screen overlay menu */
+  .main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
     box-sizing: border-box;
+    z-index: 2000;
+    overflow-y: auto;
   }
 
   .main-menu.show {
-    display: flex;
+    transform: translateX(0);
   }
 
-  /* Top-level items */
+  /* Close (X) button inside sheet */
+  .close-btn {
+    align-self: flex-end;
+    font-size: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  /* Menu links vertical */
   .menu-item > a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     padding: 0.75rem 0;
-    color: #fff;
+    font-size: 1.1rem;
+    color: #333;
     font-weight: 600;
+    border-bottom: 1px solid #eee;
   }
 
-  /* Dropdowns (expandable sections) */
+  /* Dropdown styling inside sheet */
   .menu-item > .dropdown {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.15); /* slight contrast */
     padding-left: 1rem;
+    margin-bottom: 1rem;
   }
-
   .menu-item.active > .dropdown {
     display: flex;
   }
 
-  /* Submenus */
+  /* Submenus styling */
   .has-submenu .submenu {
     display: none;
     flex-direction: column;
     padding-left: 1rem;
   }
-
   .has-submenu.active .submenu {
     display: flex;
   }
 
-  /* Links inside dropdown/submenu */
   .dropdown a, .submenu a {
-    color: #fff !important;
     padding: 0.5rem 0;
-  }
-
-  .dropdown a:hover, .submenu a:hover {
-    color: lightcyan !important;
-  }
-
-  /* Ensure columns stack vertically */
-  .dropdown-column {
-    display: flex;
-    flex-direction: column;
+    font-size: 1rem;
+    color: #444 !important;
   }
 }
 
@@ -1097,6 +1125,7 @@ body, html {
   }
 
 }
+
 
 
 
