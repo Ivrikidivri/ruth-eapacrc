@@ -568,13 +568,12 @@ footer a:hover {
 
 /* === MOBILE NAVBAR REWORK (UN.org style) === */
 @media (max-width: 768px) {
-@media (max-width: 768px) {
-
+  
   /* Navbar stays fixed top */
   .nav-bar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 10px;
     width: 100%;
     z-index: 1000;
     background: linear-gradient(90deg, #e63946, #cc2a2a);
@@ -614,7 +613,7 @@ footer a:hover {
   }
 
   /* Close (X) button inside sheet */
-  .close-btn {
+  /*.close-btn {
     align-self: flex-end;
     font-size: 2rem;
     border: none;
@@ -622,7 +621,7 @@ footer a:hover {
     cursor: pointer;
     margin-bottom: 2rem;
     color: #333;
-  }
+  }*/
 
   /* Menu links vertical */
   .menu-item > a {
@@ -1125,6 +1124,7 @@ body, html {
   }
 
 }
+
 
 
 
