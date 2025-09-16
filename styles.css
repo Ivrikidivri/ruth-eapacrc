@@ -597,7 +597,7 @@ footer a:hover {
     left: 0;
     height: 100vh;
     width: 100%;
-    background: rgba(146, 27, 39, 0.95);
+    background: linear-gradient(90deg, #e63946, #cc2a2a);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     display: flex;
@@ -1139,6 +1139,7 @@ body, html {
   }
 
 }
+
 
 
 
