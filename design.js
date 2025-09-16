@@ -115,25 +115,26 @@ document.addEventListener("DOMContentLoaded", () => {
     else closeFullImg();
   }
 
-});
+}); // Hamburger toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainMenu = document.querySelector('.main-menu');
 
-const menuToggle = document.querySelector('.menu-toggle');
-const mainMenu = document.getElementById('main-menu');
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainMenu.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', isOpen);
-});
-
-// Handle mobile submenu toggles
-document.querySelectorAll('.has-submenu > a').forEach(link => {
-  link.addEventListener('click', e => {
-    if (window.innerWidth <= 992) {
-      e.preventDefault();
-      const submenu = link.nextElementSibling;
-      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-    }
+  menuToggle.addEventListener('click', () => {
+    mainMenu.classList.toggle('show');
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
   });
-});
+
+  // Mobile submenu toggle
+  document.querySelectorAll('.has-submenu > a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parent = link.parentElement;
+        parent.classList.toggle('active');
+      }
+    });
+  });
 
 
 
