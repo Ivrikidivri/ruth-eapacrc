@@ -117,24 +117,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
- // ---------------------- MOBILE NAVBAR JS ----------------------
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
+const menuToggle = document.querySelector('.menu-toggle');
+const mainMenu = document.getElementById('main-menu');
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainMenu.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
 
-  if (hamburger) {
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-
-    document.querySelectorAll('.has-submenu > a').forEach(item => {
-      item.addEventListener('click', e => {
-        e.preventDefault();
-        const submenu = item.nextElementSibling;
-        submenu.classList.toggle('show');
-      });
-    });
-  }
-
+// Handle mobile submenu toggles
+document.querySelectorAll('.has-submenu > a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth <= 992) {
+      e.preventDefault();
+      const submenu = link.nextElementSibling;
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
 
 
 
