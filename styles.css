@@ -372,25 +372,67 @@ footer a:hover {
 }
 
 /* === NAVBAR === */
-.nav-container { font-family: sans-serif; }
-.nav-bar { display: flex; justify-content: space-between; align-items: center; background: #004080; color: #fff; padding: 0 1rem; }
-.logo { font-size: 1.5rem; color: #fff; text-decoration: none; }
-.main-menu { list-style: none; display: flex; margin: 0; padding: 0; }
-.main-menu li { position: relative; }
-.main-menu a { display: block; padding: 1rem; color: #fff; text-decoration: none; }
-.main-menu a:hover { background: #003366; }
-
-/* Submenu */
-.submenu { display: none; position: absolute; top: 100%; left: 0; background: #0059b3; min-width: 200px; list-style: none; padding: 0; z-index: 1000; }
-.submenu li a { padding: 0.5rem 1rem; }
-.menu-item:hover > .submenu { display: block; }
-
-/* Submenu for submenu (arrow) */
-.has-submenu:hover > .submenu { display: block; left: 100%; top: 0; }
+/* Default (desktop) */
+.navbar {
+  background: #333;
+  padding: 10px;
+}
+.main-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.main-menu li {
+  position: relative;
+}
+.main-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  background: #444;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+.menu-item:hover > .submenu {
+  display: block;
+}
 
 /* Mobile */
-.menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: #fff; cursor: pointer; }
-
+.navbar-toggle {
+  display: none;
+  background: #333;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+  .main-menu {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    width: 100%;
+  }
+  .main-menu.open {
+    display: flex;
+  }
+  .submenu {
+    position: static;
+    background: #444;
+    display: none;
+    flex-direction: column;
+  }
+  .menu-item.open > .submenu {
+    display: flex;
+  }
 @media (max-width: 992px) {
 /* Hamburger button */
 .menu-toggle {
@@ -986,6 +1028,7 @@ body, html {
   }
 
 }
+
 
 
 
