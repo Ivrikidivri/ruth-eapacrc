@@ -1140,6 +1140,17 @@ body, html {
 
 }
 
+/* Make sure navbar has lower z-index than lightbox */
+#navbar {
+  position: relative; /* or fixed if needed */
+  z-index: 1000;      /* less than lightbox */
+}
+
+#fullImgBox {
+  z-index: 2000;      /* higher than navbar */
+}
+
+
 
 
 
