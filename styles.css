@@ -405,42 +405,74 @@ footer a:hover {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+ /* Hamburger button */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+
   .menu-toggle { display: block; }
 
+  /* Main menu vertical */
   .main-menu {
-    display: none;             /* hidden by default */
+    display: none;
     flex-direction: column;
     width: 100%;
     background: #f44336;
+    margin-top: 0;
   }
 
   .main-menu.show { display: flex; }
 
+  .main-menu li {
+    width: 100%;
+  }
+
   .main-menu li a {
+    display: block;
     padding: 12px 20px;
     color: white;
-    display: block;
     text-decoration: none;
   }
 
-  /* Submenu styling */
-  .submenu {
-    display: none;
-    flex-direction: column;
-    padding-left: 20px;       /* indent for nested links */
-  }
-
-  /* Show submenu when parent is active */
-  .has-submenu.active > .submenu { display: flex; }
-
-  /* Optional hover effect */
-  .main-menu li a:hover,
-  .submenu a:hover {
+  /* Top-level menu items hover/focus */
+  .main-menu li a:hover {
+    background: rgba(0,0,0,0.1);
     text-decoration: underline;
   }
 
-  /* Ensure nested dropdown columns stack properly */
-  .dropdown-column { flex-direction: column; }
+  /* Submenu */
+  .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 20px;  /* indent for clarity */
+    background: #f5625a; /* slightly lighter for distinction */
+  }
+
+  /* Submenu links */
+  .submenu a {
+    padding: 8px 20px;
+    color: white;
+    font-weight: 500;
+  }
+
+  /* Show submenu when parent active */
+  .has-submenu.active > .submenu {
+    display: flex;
+  }
+
+  /* Dropdown columns stack vertically */
+  .dropdown-column {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
@@ -914,6 +946,7 @@ body, html {
   }
 
 }
+
 
 
 
