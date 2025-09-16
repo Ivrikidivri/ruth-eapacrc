@@ -661,6 +661,21 @@ footer a:hover {
   }
 }
 
+/* Default: hide on desktop */
+.mobile-only {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: flex; /* flex so icon + text align */
+    align-items: center;
+  }
+}
+
+
+
 
 
 
@@ -1124,6 +1139,7 @@ body, html {
   }
 
 }
+
 
 
 
