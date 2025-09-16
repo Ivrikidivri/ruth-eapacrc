@@ -573,7 +573,7 @@ footer a:hover {
   .nav-bar {
     position: fixed;
     top: 0;
-    left: 10px;
+    left: 0;
     width: 100%;
     z-index: 1000;
     background: linear-gradient(90deg, #e63946, #cc2a2a);
@@ -1124,6 +1124,7 @@ body, html {
   }
 
 }
+
 
 
 
