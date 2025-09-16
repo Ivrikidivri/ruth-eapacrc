@@ -136,6 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+function toggleMenu() {
+  const menu = document.getElementById('navbarMenu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
 
 
 
