@@ -17,11 +17,12 @@ html, body {
   
 }
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #f5f7fa;
+  color: #2d2d2d;
   line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
+  min-height: 100vh;
 }
 
 /* === NAVBAR === */
@@ -191,31 +192,7 @@ footer {
   margin-top: 40px;
 }
 
-/* === GOOGLE TRANSLATE === */
-#google_translate_element {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2000;
-}
-
-.goog-te-combo {
-  padding: 6px 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #fff;
-  cursor: pointer;
-}
-
-.goog-logo-link,
-.goog-te-gadget span,
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
-body { top: 0 !important; }
-
-/* === ANIMATIONS === */
+ === ANIMATIONS === 
 section {
   opacity: 0;
   transform: translateY(30px);
@@ -743,6 +720,7 @@ body, html {
   }
 
 }
+
 
 
 
