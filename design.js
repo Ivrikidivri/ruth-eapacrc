@@ -117,5 +117,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+ // ---------------------- MOBILE NAVBAR JS ----------------------
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    document.querySelectorAll('.has-submenu > a').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        const submenu = item.nextElementSibling;
+        submenu.classList.toggle('show');
+      });
+    });
+  }
+
+
+
 
 
