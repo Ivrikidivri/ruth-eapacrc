@@ -464,88 +464,93 @@ footer a:hover {
 
 /* === MOBILE NAVBAR === */
 @media (max-width: 768px) {
+  body { margin: 0; font-family: sans-serif; }
 
-  /* Hamburger toggle */
-  .menu-toggle {
-    display: block;
-    margin: 0 auto;          /* center hamburger */
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  /* Main menu container */
-  .main-menu {
-    display: none;            /* hidden by default */
-    flex-direction: column;
-    width: 100%;              /* full width of nav column */
-    background: #f44336;      /* adjust color */
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
-  }
-
-  /* Show main menu when toggled */
-  .main-menu.show {
-    display: flex;
-  }
-
-  /* Top-level menu items */
-  .menu-item > a {
-    display: block;
-    padding: 0.5rem 0;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* Dropdown inside menu column */
-  .menu-item > .dropdown {
-    display: none;           /* hidden by default */
-    position: relative;      /* keep inside column flow */
+  .mobile-nav {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding-left: 1rem;      /* indent dropdown */
-    box-sizing: border-box;
-    flex-direction: column;
-    background: #f44336;     /* same as main menu or adjust */
+    background: #004080;
+    color: #fff;
+    z-index: 1000;
   }
 
-  /* Show dropdown when parent is active */
-  .menu-item.active > .dropdown {
+  .nav-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
 
-  /* Submenus inside dropdown */
-  .has-submenu .submenu {
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: none;
     flex-direction: column;
-    padding-left: 1rem;      /* indent nested submenu */
+    background: #004080;
+    transition: max-height 0.3s ease-in-out;
   }
 
-  .has-submenu.active .submenu {
+  .nav-menu.show {
     display: flex;
   }
 
-  /* Optional: style links in dropdown */
-  .dropdown a, .submenu a {
-    padding: 0.25rem 0;
-    color: white;
+  .nav-menu li {
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: #fff;
     text-decoration: none;
   }
 
-  /* Optional: hover effect (mobile) */
-  .menu-item > a:hover, .dropdown a:hover, .submenu a:hover {
-    text-decoration: underline;
+  .nav-menu a:hover {
+    background: #003366;
   }
 
-  /* Ensure dropdown columns stack vertically */
-  .dropdown-column {
-    display: flex;
-    flex-direction: column;
+  .has-submenu > a::after {
+    content: "▾";
+    float: right;
+  }
+
+  .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 0;
+    background: #003366;
+  }
+
+  .submenu li a {
+    padding-left: 40px;
+  }
+
+  .submenu.show {
+    display: block;
   }
 }
+
+/* ---------------------- DESKTOP: HIDE MOBILE NAVBAR ---------------------- */
+@media (min-width: 769px) {
+  .mobile-nav { display: none; }
+}
+
 
   /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
@@ -1067,6 +1072,7 @@ body {
   float: left;
   margin: 10px;
 }*/
+
 
 
 
