@@ -1,12 +1,15 @@
 <!-- navbar.html -->
-<div class="nav-container">
-  <nav class="nav-bar">
-    <div class="nav-inner">
-      <!-- Logo -->
-      <a href="#" class="logo">MySite</a>
-
-      <!-- Hamburger / Mobile toggle -->
-      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+<nav class="navbar">
+  <div class="navbar-header">
+    <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+  <ul class="navbar-menu" id="navbarMenu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
       <!-- Main Menu -->
       <ul id="main-menu" class="main-menu">
@@ -85,4 +88,5 @@
 
 
          
+
 
