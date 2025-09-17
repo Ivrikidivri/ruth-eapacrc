@@ -110,26 +110,3 @@ if (toggleBtn && navMenu) {
     if (currentIndex > 0) currentIndex--, fullImg.src = images[currentIndex];
     else closeFullImg();
   }
-
-
-// === Hamburger toggle ===
-const toggleBtn = navbarContainer.querySelector(".menu-toggle");
-const navMenu = navbarContainer.querySelector(".main-menu");
-
-if (toggleBtn && navMenu) {
-  toggleBtn.addEventListener("click", () => {
-    // toggle the overlay
-    navMenu.classList.toggle("show");
-
-    // toggle the button icon
-    if (toggleBtn.classList.contains("active")) {
-      toggleBtn.classList.remove("active");
-      toggleBtn.setAttribute("aria-expanded", "false");
-    } else {
-      toggleBtn.classList.add("active");
-      toggleBtn.setAttribute("aria-expanded", "true");
-    }
-  });
-}
-
-
