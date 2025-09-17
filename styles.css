@@ -687,10 +687,11 @@ footer a:hover {
     display: flex;
   }
 
-  .dropdown a, .submenu a {
+ .dropdown a, .submenu a {
     padding: 0.5rem 0;
     font-size: 1rem;
-    color: #444 !important;
+    color: white !important;
+    background: darkred !important;
   }
 }
 
@@ -1184,6 +1185,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
