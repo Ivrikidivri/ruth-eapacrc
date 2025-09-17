@@ -102,48 +102,50 @@ p {
   margin: 0;
 }
 
-/* === Enhanced, responsive search box === */
+/* === Compact pill-style search box === */
 .search-box {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #f9f9f9;
-  max-width: 280px;  /* keeps it neat */
-  transition: box-shadow 0.2s ease;
+  border: 1px solid #ddd;
+  border-radius: 999px;   /* pill shape */
+  background: #fff;
+  max-width: 240px;       /* smaller width */
+  padding: 2px 8px;       /* tighter padding */
+  transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .search-box:focus-within {
-  box-shadow: 0 0 0 2px rgba(204, 42, 42, 0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   border-color: #cc2a2a;
 }
 
 .search-box input {
   border: none;
   outline: none;
-  padding: 8px 10px;
-  flex: 1;                   /* grows with container */
-  min-width: 120px;          /* doesn’t collapse too small */
-  font-size: 0.9rem;
+  padding: 6px 8px;
+  flex: 1;
+  font-size: 0.8rem;      /* smaller text */
   background: transparent;
+  color: #333;
 }
 
 .search-box input::placeholder {
-  color: #999;
+  color: #aaa;
+  font-style: italic;
 }
 
 .search-box button {
   border: none;
   background: #cc2a2a;
   color: #fff;
-  padding: 8px 12px;
+  padding: 6px 10px;      /* smaller button */
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 50%;     /* still circular */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.1s ease;
+  transition: background 0.3s ease, transform 0.15s ease;
 }
 
 .search-box button:hover {
@@ -151,7 +153,7 @@ p {
 }
 
 .search-box button:active {
-  transform: scale(0.95);
+  transform: scale(0.9);
 }
 
 
@@ -1193,6 +1195,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
