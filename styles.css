@@ -727,6 +727,28 @@ footer a:hover {
   }
 }
 
+/* Hide desktop menu on mobile */
+.desktop-menu {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+/* Show desktop, hide mobile overlay on larger screens */
+@media (min-width: 768px) {
+  .desktop-menu {
+    display: flex;
+  }
+  .menu-toggle,
+  .main-menu,
+  .mobile-only {
+    display: none;
+  }
+}
+
+
 
 
 
@@ -1202,6 +1224,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
