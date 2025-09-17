@@ -108,17 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
     else closeFullImg();
   }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.querySelector(".menu-toggle");
-  const closeBtn = document.querySelector(".close-btn");
-  const mainMenu = document.getElementById("main-menu");
+  const navMenu = document.querySelector(".main-menu");
 
   toggleBtn.addEventListener("click", () => {
-    mainMenu.classList.add("show");
-  });
-
-  closeBtn.addEventListener("click", () => {
-    mainMenu.classList.remove("show");
+    navMenu.classList.toggle("active");
+    toggleBtn.classList.toggle("active");
   });
 });
