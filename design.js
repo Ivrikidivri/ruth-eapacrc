@@ -8,12 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         navbarContainer.innerHTML = data;
 
-        // Hamburger toggle
-        const toggleBtn = navbarContainer.querySelector('.menu-toggle');
-        const navMenu = navbarContainer.querySelector('.main-menu');
-        if (toggleBtn && navMenu) {
-          toggleBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
-        }
+      // Hamburger toggle
+const toggleBtn = navbarContainer.querySelector('.menu-toggle');
+const navMenu = navbarContainer.querySelector('.main-menu');
+if (toggleBtn && navMenu) {
+  toggleBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    toggleBtn.classList.toggle('active'); // 🔥 add this line
+  });
+}
 
         // Mobile accordion submenus
         const submenuParents = navbarContainer.querySelectorAll(".has-submenu > a");
@@ -108,9 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else closeFullImg();
   }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".main-menu");
 
-});
+
 
