@@ -109,32 +109,58 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
- document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle"); // hamburger
-    const mainMenu   = document.getElementById("main-menu");   // overlay menu
-    const closeBtn   = document.querySelector(".close-btn");   // X button
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const closeBtn = document.querySelector(".close-btn");
+  const mainMenu = document.getElementById("main-menu");
+  const menuItems = document.querySelectorAll(".menu-item > a");
+  const subMenus = document.querySelectorAll(".has-submenu > a");
 
-    if (menuToggle && mainMenu && closeBtn) {
-      // Open menu
-      menuToggle.addEventListener("click", () => {
-        mainMenu.classList.add("show");
-        menuToggle.setAttribute("aria-expanded", "true");
-      });
+  // Open menu
+  toggleBtn.addEventListener("click", () => {
+    mainMenu.classList.add("show");
+    toggleBtn.setAttribute("aria-expanded", "true");
+  });
 
-      // Close menu
-      closeBtn.addEventListener("click", () => {
-        mainMenu.classList.remove("show");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
+  // Close menu
+  closeBtn.addEventListener("click", () => {
+    mainMenu.classList.remove("show");
+    toggleBtn.setAttribute("aria-expanded", "false");
+  });
 
-      // Close with Escape key
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && mainMenu.classList.contains("show")) {
-          mainMenu.classList.remove("show");
-          menuToggle.setAttribute("aria-expanded", "false");
-        }
-      });
+  // Close overlay when clicking outside (optional)
+  document.addEventListener("click", (e) => {
+    if (
+      mainMenu.classList.contains("show") &&
+      !mainMenu.contains(e.target) &&
+      !toggleBtn.contains(e.target)
+    ) {
+      mainMenu.classList.remove("show");
+      toggleBtn.setAttribute("aria-expanded", "false");
     }
   });
 
+  // Mobile dropdown toggle (accordion style)
+  subMenus.forEach((submenuLink) => {
+    submenuLink.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault(); // stop navigation
+        const parent = submenuLink.parentElement;
+        parent.classList.toggle("active");
+      }
+    });
+  });
 
+  // Prevent desktop hover dropdowns from breaking accordion
+  menuItems.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        const parent = link.parentElement;
+        if (parent.querySelector(".dropdown")) {
+          e.preventDefault(); // prevent navigation
+          parent.classList.toggle("active");
+        }
+      }
+    });
+  });
+});
