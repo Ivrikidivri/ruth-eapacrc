@@ -112,8 +112,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".main-menu");
 
-  toggleBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-    toggleBtn.classList.toggle("active");
-  });
 });
+
