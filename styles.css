@@ -519,24 +519,24 @@ footer a:hover {
 @media (max-width: 768px) {
 
   /* Hamburger toggle */
-  /*.menu-toggle {
+  .menu-toggle {
     display: block;
     margin: 0 auto;          /* center hamburger */
     font-size: 24px;
     background: none;
     border: none;
     cursor: pointer;
-  }*/
+  }
 
   /* Main menu container */
-  /*.main-menu {
+  .main-menu {
     display: none;            /* hidden by default */
     flex-direction: column;
     width: 100%;              /* full width of nav column */
     background: #f44336;      /* adjust color */
     padding: 0.5rem 1rem;
     box-sizing: border-box;
-  }*/
+  }
 
   /* Show main menu when toggled */
   .main-menu.show {
@@ -664,17 +664,6 @@ footer a:hover {
   .main-menu.show {
     transform: translateX(0);
   }
-
-  /* Close (X) button inside sheet */
-  /*.close-btn {
-    align-self: flex-end;
-    font-size: 2rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    color: #333;
-  }*/
 
   /* Menu links vertical */
   .menu-item > a {
@@ -1204,6 +1193,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
