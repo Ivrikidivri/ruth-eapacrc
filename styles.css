@@ -526,10 +526,10 @@ footer a:hover {
     background: none;
     border: none;
     cursor: pointer;
-  }
+  }*/
 
   /* Main menu container */
-  .main-menu {
+  /*.main-menu {
     display: none;            /* hidden by default */
     flex-direction: column;
     width: 100%;              /* full width of nav column */
@@ -1204,6 +1204,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
