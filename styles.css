@@ -603,17 +603,16 @@ footer a:hover {
 }
 
   /* Force red for dropdown headings and links on mobile */
+  /* Force red for dropdown headings and links on mobile */
   .main-menu .dropdown-column a {
-    color: white !important;
+    color: red !important;
     font-weight: 700;
     text-decoration: none;
-    background: darkred !important;
   }
 
   .main-menu .dropdown-column a:hover {
-    color: white !important;
+    color: darkred !important;
     text-decoration: underline;
-    background: darkred !important;
   }
 
 @media (max-width: 768px) {
@@ -1197,6 +1196,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
