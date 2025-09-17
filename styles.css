@@ -102,6 +102,59 @@ p {
   margin: 0;
 }
 
+/* === Enhanced, responsive search box === */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f9f9f9;
+  max-width: 280px;  /* keeps it neat */
+  transition: box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 0 0 2px rgba(204, 42, 42, 0.3);
+  border-color: #cc2a2a;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  flex: 1;                   /* grows with container */
+  min-width: 120px;          /* doesn’t collapse too small */
+  font-size: 0.9rem;
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box button {
+  border: none;
+  background: #cc2a2a;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.search-box button:hover {
+  background: rgba(146, 27, 39, 0.95);
+}
+
+.search-box button:active {
+  transform: scale(0.95);
+}
+
+
 /* === Mobile responsive adjustments === */
 @media (max-width: 768px) {
   .logo-area {
@@ -1149,6 +1202,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
