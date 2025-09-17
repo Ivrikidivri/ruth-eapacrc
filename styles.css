@@ -535,7 +535,7 @@ footer a:hover {
     display: none;            /* hidden by default */
     flex-direction: column;
     width: 100%;              /* full width of nav column */
-    background: #f44336;      /* adjust color */
+    background: darkred;      /* adjust color */
     padding: 0.5rem 1rem;
     box-sizing: border-box;
   }
@@ -1196,6 +1196,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
