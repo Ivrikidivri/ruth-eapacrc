@@ -727,20 +727,12 @@ footer a:hover {
   }
 }
 
-.menu-toggle .icon-close {
-  display: none;
-  font-size: 28px;
-}
 
-.menu-toggle.active .icon-hamburger {
-  display: none;
-}
+.menu-toggle .icon-hamburger { display: inline; }
+.menu-toggle .icon-close { display: none; }
 
-.menu-toggle.active .icon-close {
-  display: inline;
-}
-
-
+.menu-toggle.active .icon-hamburger { display: none; }
+.menu-toggle.active .icon-close { display: inline; }
 
 
 
@@ -1212,6 +1204,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
