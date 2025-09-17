@@ -3,20 +3,21 @@
   <nav class="nav-bar">
     <div class="nav-inner">
 
-    <div class="nav-left mobile-only">
-    <a href="" class="home-link">
-      <span class="home-icon"></span>
-      Welcome to EAPACRC Secretariat
-    </a>
-    </div>
+      <!-- Mobile top bar -->
+      <div class="nav-left mobile-only">
+        <a href="/" class="home-link">
+          <span class="home-icon"></span>
+          Welcome to EAPACRC Secretariat
+        </a>
+      </div>
 
-      
-      <!-- mobile toggle -->
-      <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+      <!-- Mobile toggle -->
+      <button class="menu-toggle mobile-only" aria-label="Toggle Menu" aria-expanded="false" aria-controls="main-menu">☰</button>
 
-  <ul id="main-menu" class="main-menu">
+      <!-- Desktop Menu (dropdowns) -->
+      <ul class="desktop-menu">
         <li class="menu-item">
-          <a href="#">About Us </a>
+          <a href="#">About Us</a>
           <div class="dropdown">
             <div class="dropdown-column">
               <h3>Who We Are</h3>
@@ -29,7 +30,7 @@
         </li>
 
         <li class="menu-item">
-          <a href="#">Our Work </a>
+          <a href="#">Our Work</a>
           <div class="dropdown">
             <div class="dropdown-column">
               <h3>What We Do</h3>
@@ -40,12 +41,11 @@
         </li>
 
         <li class="menu-item">
-          <a href="#">Regional Homes </a>
+          <a href="#">Regional Homes</a>
           <div class="dropdown">
             <div class="dropdown-column">
               <h3>Nations</h3>
               <a href="/Nations%20(China)/index.html">China</a>
-
               <div class="has-submenu">
                 <a href="#">Hong Kong ▼</a>
                 <div class="submenu">
@@ -53,9 +53,7 @@
                   <a href="/Nations%20(Hong%20Kong%20-%20%20Shatin)/index.html?lang=en">Shatin</a>
                 </div>
               </div>
-
               <a href="/Nations%20(Indonesia)/index.html">Indonesia</a>
-
               <div class="has-submenu">
                 <a href="#">Japan ▼</a>
                 <div class="submenu">
@@ -64,7 +62,6 @@
                   <a href="/Nations%20(Japan%20-%20Shiso)/index.html">Shisho</a>
                 </div>
               </div>
-
               <div class="has-submenu">
                 <a href="#">Malaysia ▼</a>
                 <div class="submenu">
@@ -74,7 +71,6 @@
                   <a href="/Nations%20(Malaysia%20-%20Selangor)/index.html?lang=en">Selangor</a>
                 </div>
               </div>
-
               <a href="/Nations%20(Singapore)/index.html">Singapore</a>
               <a href="/Nations%20(Thailand)/index.html">Thailand</a>
               <a href="/Nations%20(Philippines)/index.html">The Philippines</a>
@@ -84,7 +80,7 @@
         </li>
 
         <li class="menu-item">
-          <a href="#">Events & News </a>
+          <a href="#">Events & News</a>
           <div class="dropdown">
             <div class="dropdown-column">
               <h3>Latest Events</h3>
@@ -94,7 +90,7 @@
         </li>
 
         <li class="menu-item">
-          <a href="#">Get Involved </a>
+          <a href="#">Get Involved</a>
           <div class="dropdown">
             <div class="dropdown-column">
               <h3>Work With Us</h3>
@@ -103,26 +99,21 @@
             </div>
           </div>
         </li>
+      </ul>
 
-  <!-- Mobile Fullscreen Overlay -->
+      <!-- Mobile Fullscreen Overlay -->
       <ul id="main-menu" class="main-menu">
-        <!-- Close button -->
         <button class="close-btn" aria-label="Close menu">&times;</button>
-
         <li><a href="History.html">About Us</a></li>
         <li><a href="/Programs/index.html">Our Work</a></li>
         <li><a href="/Nations%20(China)/index.html">Regional Homes</a></li>
         <li><a href="/Event%20and%20News/index.html">Events & News</a></li>
         <li><a href="/Get%20Involved/index.html">Get Involved</a></li>
       </ul>
-    
-      </ul>
+
     </div>
   </nav>
 </div>
-
-
-
 
 
 
