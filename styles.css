@@ -620,7 +620,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(146, 27, 39, 0.95);
+    background: linear-gradient(135deg, #d41f49, #cb442c);
   }
 
   /* Hamburger button */
@@ -1185,6 +1185,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
