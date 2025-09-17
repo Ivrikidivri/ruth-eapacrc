@@ -616,6 +616,10 @@ footer a:hover {
     background: darkred !important;
   }
 
+.h3 {
+  background: darkred !important;
+}
+
 @media (max-width: 768px) {
   footer {
     padding: 20px 10px;
@@ -1197,6 +1201,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
