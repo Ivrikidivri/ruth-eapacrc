@@ -509,7 +509,7 @@ footer a:hover {
 .menu-toggle {
   display: none;         /* hidden on desktop */
   font-size: 28px;
-  background: red;
+  background: darkred;
   border: none;
   cursor: pointer;
   color: #fff;
@@ -615,10 +615,6 @@ footer a:hover {
     text-decoration: underline;
     background: darkred !important;
   }
-
-.h3 {
-  background: darkred !important;
-}
 
 @media (max-width: 768px) {
   footer {
@@ -1201,6 +1197,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
