@@ -691,12 +691,19 @@ footer a:hover {
   background: white !important;
 }
   
- .dropdown a, .submenu a {
+ .dropdown a {
     padding: 0.5rem 0;
     font-size: 1rem;
     color: red !important;
     background: white !important;
 }
+
+.submenu a {
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: darkred !important;
+  background: white !important;
+}  
 }
 
 /* Default: hide on desktop */
@@ -1192,6 +1199,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
