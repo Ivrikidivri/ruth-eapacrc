@@ -689,7 +689,6 @@ footer a:hover {
 
  .dropdown {
   background: white !important;
-  color: red !important;
 }
   
  .dropdown a, .submenu a {
@@ -1200,6 +1199,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
