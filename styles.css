@@ -687,15 +687,23 @@ footer a:hover {
     display: flex;
   }
 
+ .dropdown {
+  background: white !important;
+  color: red !important;
+}
+  
  .dropdown a, .submenu a {
     padding: 0.5rem 0;
     font-size: 1rem;
-    color: white !important;
-    background: darkred !important;
-  }
+    color: red !important;
+    background: white !important;
+}
 
-  .dropdown {
-  background: darkred !important;
+ .dropdown a:hover, .submenu:hover a {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: darkred !important;
+    background: white !important;
 }
 }
 
@@ -1192,6 +1200,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
