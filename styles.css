@@ -695,7 +695,7 @@ footer a:hover {
   }
 }
 
-.h3{
+.dropdown-column h3{
   background: darkred !important;
 }
 
@@ -1192,6 +1192,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
