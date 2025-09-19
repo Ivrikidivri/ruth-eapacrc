@@ -697,13 +697,6 @@ footer a:hover {
     color: red !important;
     background: white !important;
 }
-
- .dropdown:hover a, .submenu:hover a {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    color: darkred !important;
-    background: white !important;
-}
 }
 
 /* Default: hide on desktop */
@@ -1199,6 +1192,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
