@@ -695,6 +695,10 @@ footer a:hover {
   }
 }
 
+.h3{
+  background: darkred !important;
+}
+
 /* Default: hide on desktop */
 .mobile-only {
   display: none;
@@ -714,6 +718,9 @@ footer a:hover {
 
 .menu-toggle.active .icon-hamburger { display: none; }
 .menu-toggle.active .icon-close { display: inline; }
+
+
+
 
 
 
@@ -1185,6 +1192,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
