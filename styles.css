@@ -693,10 +693,10 @@ footer a:hover {
     color: white !important;
     background: darkred !important;
   }
-}
 
-.dropdown {
+  .dropdown {
   background: darkred !important;
+}
 }
 
 /* Default: hide on desktop */
@@ -1192,6 +1192,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
