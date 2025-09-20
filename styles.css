@@ -635,8 +635,8 @@ footer a:hover {
     padding: 1rem;
     cursor: pointer;
   }
-
-  /* Full-screen overlay menu */
+  
+ /* Full-screen overlay menu */
   .main-menu {
     position: fixed;
     top: 0;
@@ -669,7 +669,17 @@ footer a:hover {
   }
 
   /* Dropdown styling inside sheet */
-/* Submenus styling */
+  .menu-item > .dropdown {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .menu-item.active > .dropdown {
+    display: flex;
+  }
+
+  /* Submenus styling */
   .has-submenu .submenu {
     display: none;
     flex-direction: column;
@@ -677,7 +687,6 @@ footer a:hover {
   }
   .has-submenu.active .submenu {
     display: flex;
-    word-break: break-word;
   }
   
  .dropdown {
@@ -687,12 +696,16 @@ footer a:hover {
     background: #fff !important;
   }
 
-.submenu a {
+  .dropdown:hover{
+    color: darkred;
+  }
+  
+  .submenu a {
   padding: 0.5rem 0;
   font-size: 1rem;
   color: darkred !important;
   background: #fff !important;
-}  
+  }  
 }
 
 /* Default: hide on desktop */
@@ -1300,6 +1313,7 @@ body, html {
         font-size: 1rem;
       }
     }
+
 
 
 
