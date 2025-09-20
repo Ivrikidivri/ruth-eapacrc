@@ -794,72 +794,6 @@ footer a:hover {
 
 
 
-
-/* === Contact Grid Design === */
-.contact-grid {
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 20px;
-  text-align: center;
-}
-
-.contact-grid h1 {
-  font-size: 2.2rem;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.contact-grid h1::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #e63946, #f3722c);
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-.contact-grid .intro {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.contact-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 20px;
-}
-
-.contact-card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #2980b9;
-}
-
-.contact-card p {
-  font-size: 1rem;
-  color: #444;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-
-
-
-
     
 /*TEAM ONLY*/
  /* === Team Section === */
@@ -922,14 +856,14 @@ footer a:hover {
   border-radius: 50%;
   margin-bottom: 15px;
   object-fit: cover;
-  border: 3px solid #3498db;
+  border: 3px solid #e63946;
 }
 
 /* Text styles */
 .team-card h3 {
   font-size: 1.2rem;
   margin: 5px 0;
-  color: #2980b9;
+  color: #e63946;
 }
 
 .team-card h4 {
@@ -1250,7 +1184,6 @@ body, html {
     width: 14px;
     height: 14px;
   }
-
 }
 
 /* Make sure navbar has lower z-index than lightbox */
@@ -1269,6 +1202,110 @@ body, html {
 
 
 
+/* === HERO SECTION (clean, no background) === */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0 0 15px;
+      color: #444; /* keep red text for branding */
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* === DONATION METHODS === */
+    .donate-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .donate-section h2 {
+      font-size: 2rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+     .donate-section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #e63946, #f3722c);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .donate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+      justify-items: center;
+    }
+
+    .donate-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 260px;
+      text-align: center;
+    }
+
+    .donate-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .donate-card h3 {
+      font-size: 1.2rem;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+
+    .donate-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .donate-card a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #e63946;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .donate-card a.button:hover {
+      background: #cc2a2a;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
 
 
 
