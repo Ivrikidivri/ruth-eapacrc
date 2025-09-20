@@ -670,14 +670,19 @@ footer a:hover {
 
   /* Dropdown styling inside sheet */
   .menu-item > .dropdown {
-    display: none;
-    flex-direction: column;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-  }
-  .menu-item.active > .dropdown {
-    display: flex;
-  }
+  display: none;
+  flex-direction: column;
+
+  margin-left: 1rem;          /* push block slightly right */
+  width: calc(100% - 1rem);   /* shrink so it stays inside column */
+  padding-left: 0.5rem;       /* optional, pushes text inside */
+  margin-bottom: 1rem;
+  border-left: 2px solid #eee; /* optional visual guide */
+}
+
+.menu-item.active > .dropdown {
+  display: flex;
+}
 
   /* Submenus styling */
   .has-submenu .submenu {
@@ -1306,6 +1311,7 @@ body, html {
         font-size: 1rem;
       }
     }
+
 
 
 
