@@ -655,25 +655,32 @@ footer a:hover {
   }
 
   /* Dropdown styling inside sheet */
-  .menu-item > .dropdown {
-    display: none;
-    flex-direction: column;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-  }
-  .menu-item.active > .dropdown {
-    display: flex;
-  }
+  /* First-level dropdown */
+.menu-item > .dropdown {
+  display: none;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-left: 1rem;   /* shift to the right */
+  border-left: 2px solid #eee; /* optional visual guide */
+  padding-left: 0.5rem;
+}
 
-  /* Submenus styling */
-  .has-submenu .submenu {
-    display: none;
-    flex-direction: column;
-    padding-left: 1rem;
-  }
-  .has-submenu.active .submenu {
-    display: flex;
-  }
+.menu-item.active > .dropdown {
+  display: flex;
+}
+
+/* Nested submenu */
+.has-submenu .submenu {
+  display: none;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;  /* indent more */
+  border-left: 2px solid #ddd; /* optional */
+  padding-left: 0.5rem;
+}
+
+.has-submenu.active .submenu {
+  display: flex;
 
  .dropdown {
   background: #fff !important;
@@ -1186,6 +1193,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
