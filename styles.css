@@ -669,32 +669,7 @@ footer a:hover {
   }
 
   /* Dropdown styling inside sheet */
-  .menu-item > .dropdown {
-  display: none;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  width: calc(100% - 1rem); /* slightly narrower */
-  margin-left: 1rem;        /* shift inside column */
-}
-
-.menu-item.active > .dropdown {
-  display: flex;
-}
-
-/* Nested submenu */
-.has-submenu .submenu {
-  display: none;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  width: calc(100% - 1.5rem); /* narrower again */
-  margin-left: 1.5rem;        /* shifted further right */
-}
-
-.has-submenu.active .submenu {
-  display: flex;
-}
-
-  /* Submenus styling */
+/* Submenus styling */
   .has-submenu .submenu {
     display: none;
     flex-direction: column;
@@ -702,6 +677,7 @@ footer a:hover {
   }
   .has-submenu.active .submenu {
     display: flex;
+    word-break: break-word;
   }
   
  .dropdown {
@@ -709,7 +685,7 @@ footer a:hover {
     font-size: 1rem;
     color: red !important;
     background: #fff !important;
-}
+  }
 
 .submenu a {
   padding: 0.5rem 0;
@@ -737,6 +713,9 @@ footer a:hover {
 
 .menu-toggle.active .icon-hamburger { display: none; }
 .menu-toggle.active .icon-close { display: inline; }
+
+
+
 
 
 
@@ -1321,6 +1300,7 @@ body, html {
         font-size: 1rem;
       }
     }
+
 
 
 
