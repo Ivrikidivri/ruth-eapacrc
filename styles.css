@@ -505,6 +505,18 @@ footer a:hover {
   border-radius: 6px;
 }
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;         /* hidden on desktop */
+  font-size: 28px;
+  background: darkred;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  z-index: 10000;         /* above everything */
+}
+
 /* === MOBILE NAVBAR === */
 @media (max-width: 768px) {
 
@@ -629,7 +641,7 @@ footer a:hover {
     left: 0;
     height: 100vh;
     width: 100%;
-    background: rgba(146, 27, 39, 0.95);
+    background: linear-gradient(135deg, #d41f49, #cb442c);;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     display: flex;
@@ -655,38 +667,27 @@ footer a:hover {
   }
 
   /* Dropdown styling inside sheet */
-  /* First-level dropdown */
-.menu-item > .dropdown {
-  display: none;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  margin-left: 1rem;   /* shift to the right */
-  border-left: 2px solid #eee; /* optional visual guide */
-  padding-left: 0.5rem;
-}
+  .menu-item > .dropdown {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  .menu-item.active > .dropdown {
+    display: flex;
+  }
 
-.menu-item.active > .dropdown {
-  display: flex;
-}
-
-/* Nested submenu */
-.has-submenu .submenu {
-  display: none;
-  flex-direction: column;
-  margin-top: 0.5rem;
-  margin-left: 1.5rem;  /* indent more */
-  border-left: 2px solid #ddd; /* optional */
-  padding-left: 0.5rem;
-}
-
-.has-submenu.active .submenu {
-  display: flex;
-
- .dropdown {
-  background: #fff !important;
-}
+  /* Submenus styling */
+  .has-submenu .submenu {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+  }
+  .has-submenu.active .submenu {
+    display: flex;
+  }
   
- .dropdown a {
+ .dropdown {
     padding: 0.5rem 0;
     font-size: 1rem;
     color: red !important;
@@ -719,6 +720,77 @@ footer a:hover {
 
 .menu-toggle.active .icon-hamburger { display: none; }
 .menu-toggle.active .icon-close { display: inline; }
+
+
+
+
+
+
+
+
+
+
+/* === Contact Grid Design === */
+.contact-grid {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-grid h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.contact-grid h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #e63946, #f3722c);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.contact-grid .intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.contact-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #e63946;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 
 
 
@@ -1193,6 +1265,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
