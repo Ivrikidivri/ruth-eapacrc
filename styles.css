@@ -505,18 +505,6 @@ footer a:hover {
   border-radius: 6px;
 }
 
-/* Hamburger button */
-.menu-toggle {
-  display: none;         /* hidden on desktop */
-  font-size: 28px;
-  background: darkred;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  position: relative;
-  z-index: 10000;         /* above everything */
-}
-
 /* === MOBILE NAVBAR === */
 @media (max-width: 768px) {
 
@@ -641,7 +629,7 @@ footer a:hover {
     left: 0;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(135deg, #d41f49, #cb442c);
+    background: rgba(146, 27, 39, 0.95);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     display: flex;
@@ -688,21 +676,21 @@ footer a:hover {
   }
 
  .dropdown {
-  background: white !important;
+  background: #fff !important;
 }
   
  .dropdown a {
     padding: 0.5rem 0;
     font-size: 1rem;
     color: red !important;
-    background: white !important;
+    background: #fff !important;
 }
 
 .submenu a {
   padding: 0.5rem 0;
   font-size: 1rem;
   color: darkred !important;
-  background: white !important;
+  background: #fff !important;
 }  
 }
 
@@ -718,7 +706,6 @@ footer a:hover {
     align-items: center;
   }
 }
-
 
 .menu-toggle .icon-hamburger { display: inline; }
 .menu-toggle .icon-close { display: none; }
@@ -1199,6 +1186,7 @@ body, html {
 #fullImgBox {
   z-index: 2000;      /* higher than navbar */
 }
+
 
 
 
